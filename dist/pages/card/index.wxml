@@ -1,0 +1,35 @@
+
+  <view class="container">
+
+    <view class="doc-title">CARD</view>
+
+    <view class="dj-panel">
+      
+  <view class="dj-card {{$card1$className}}"  wx:if="{{$card1$src}}" bindtap="$card1$handletap" data-wpyhandletap-a="{{$card1$componentId}}">
+    <view class="dj-card__thumb">
+      <image class="dj-card__img" src="{{$card1$src}}" mode="aspectFit"/>
+    </view>
+    <view class="dj-card__detail" wx:if="{{$card1$rightText||$card1$leftText}}">
+      <view class="dj-card__detail-row">
+        <view class="dj-card__right-col" wx:if="{{$card1$rightText}}">{{$card1$rightText}}</view>
+        <view class="dj-card__left-col dj-ellipsis--l2" wx:if="{{$card1$leftText}}">
+           {{$card1$leftText}}
+        </view>
+      </view>
+      
+      <view class="dj-card__detail-row dj-c-gray-darker">
+        <view class="dj-card__right-col">x2</view>
+        <view class="dj-card__left-col">
+          3000克 50%
+        </view>
+      </view>
+
+      <view class="dj-card__detail-row dj-c-gray-darker">
+        <view class="dj-card__left-col dj-c-red">已发货</view>
+      </view>
+    
+    </view>
+  </view>
+
+    </view>
+  </view>

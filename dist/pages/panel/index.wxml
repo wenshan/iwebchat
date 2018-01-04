@@ -1,0 +1,19 @@
+
+    <view class="container">
+
+        <view class="doc-title">PANEL</view>
+
+        <view class="dj-panel-title">标题</view>
+        <view class="dj-panel">
+            <view style="padding: 15px;">内容</view>
+        </view>
+
+        <view class="dj-panel">
+            <view style="padding: 15px;">内容</view>
+        </view>
+
+        <view class="dj-panel">
+            <view style="padding: 15px;">内容</view>
+        </view>
+
+    </view>

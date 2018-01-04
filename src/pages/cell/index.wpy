@@ -1,0 +1,110 @@
+<style lang="less">
+</style>
+<template>
+  <view class="container">
+
+    <view class="doc-title">CELL</view>
+
+    <view class="dj-panel">
+      <Cell1
+      cellbd="单行列表"
+      >
+      </Cell1>
+    </view>
+
+    <view class="dj-panel">
+      <Cell2
+      cellbd="单行列表"
+      cellft="详细信息"
+      >
+    </Cell2>
+    </view>
+
+    <view class="dj-panel">
+      <Cell3
+      cellbd="单行列表"
+      cellft="详细信息"
+      >
+      <view slot="leftIcon" class="dj-cell__icon dj-icon dj-icon-checked" style="color:#38f;"></view>
+    </Cell3>
+    </view>
+
+    <view class="dj-panel">
+      <Cell4
+      cellft="详细信息"
+      >
+      <block slot="cellbd">
+        <view class="dj-cell__text">单行列表</view>
+        <view class="dj-cell__desc">附加描述</view>
+      </block>
+    </Cell4>
+    </view>
+
+    <view class="dj-panel">
+      <Cell5
+      cellft="详细信息"
+      className="dj-cell--switch"
+      :handleRight.sync="handleSwitchChange"
+      >
+      <block slot="cellft">
+        <Switch1 :checked.sync="checked"></Switch1>
+      </block>
+    </Cell5>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Cell1 from '@/components/wepy-cell/index' // alias example
+  import Switch1 from '@/components/wepy-switch/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Cell extends wepy.page {
+    constructor(){
+      super();
+      this.handleSwitchChange=this.handleSwitchChange.bind(this);
+    }
+    config = {
+      navigationBarTitleText: "Cell 单元格"
+    }
+    components = {
+      Cell1: Cell1,
+      Cell2: Cell1,
+      Cell3: Cell1,
+      Cell4: Cell1,
+      Cell5: Cell1,
+      Switch1:Switch1
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      checked: false
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+    handleSwitchChange(id) {
+        this.checked=!this.checked;
+        this.$apply();
+    }
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

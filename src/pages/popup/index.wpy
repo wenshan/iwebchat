@@ -1,0 +1,123 @@
+<template>
+    <view class="container">
+
+        <view class="doc-title">POPUP</view>
+
+        <view class="dj-btns" style="margin-top: 30vh;">
+            <button class="dj-btn" @tap="togglePopup">
+                弹出popup
+            </button>
+            <button class="dj-btn" @tap="toggleTopPopup">
+                从顶部弹出popup
+            </button>
+            <button class="dj-btn" @tap="toggleBottomPopup">
+                从底部弹出popup
+            </button>
+            <button class="dj-btn" @tap="toggleLeftPopup">
+                从左边弹出popup
+            </button>
+            <button class="dj-btn" @tap="toggleRightPopup">
+                从右边弹出popup
+            </button>
+        </view>
+
+        <view class="dj-popup {{ showPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" bindtap="togglePopup"></view>
+            <view class="dj-popup__container popup-example--center">
+                <view class="dj-btns">
+                    <button class="dj-btn" @tap="togglePopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+        <view class="popup-example--left dj-popup dj-popup--left {{ showLeftPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" @tap="toggleLeftPopup"></view>
+            <view class="dj-popup__container">
+                <view class="dj-btns">
+                    <button class="dj-btn" @tap.stop="toggleLeftPopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+        <view class="popup-example--right dj-popup dj-popup--right {{ showRightPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" @tap.stop="toggleRightPopup"></view>
+            <view class="dj-popup__container">
+                <view class="dj-btns">
+                    <button class="dj-btn" @tap.stop="toggleRightPopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+        <view class="popup-example--top dj-popup dj-popup--top {{ showTopPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" @tap.stop="toggleTopPopup"></view>
+            <view class="dj-popup__container">
+                内容
+            </view>
+        </view>
+
+        <view class="popup-example--bottom dj-popup dj-popup--bottom {{ showBottomPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" @tap.stop="toggleBottomPopup"></view>
+            <view class="dj-popup__container">
+                <view class="dj-btns">
+                    <button class="dj-btn" @htap.stop="toggleBottomPopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Popup from '@/components/wepy-popup/index'
+
+export default class PopupEx extends wepy.page {
+
+    config = {
+        navigationBarTitleText: 'Popup 弹出层'
+    }
+
+    data = {
+        showPopup: false,
+        showLeftPopup: false,
+        showRightPopup: false,
+        showTopPopup: false,
+        showBottomPopup: false
+    }
+
+    events = {
+
+    }
+
+    methods = {
+        togglePopup() {
+            this.showPopup = !this.showPopup;
+        },
+
+        toggleLeftPopup() {
+            this.showLeftPopup = !this.showLeftPopup;
+        },
+
+        toggleRightPopup() {
+            this.showRightPopup = !this.showRightPopup;
+        },
+
+        toggleBottomPopup() {
+            this.showBottomPopup = !this.showBottomPopup;
+        },
+
+        toggleTopPopup() {
+            this.showTopPopup = !this.showTopPopup;
+        }
+    }
+}
+
+</script>

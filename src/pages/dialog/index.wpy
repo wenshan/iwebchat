@@ -1,0 +1,119 @@
+
+<style lang="less">
+</style>
+<template>
+<view class="container">
+
+  <view class="doc-title">DIALOG</view>
+
+  <view class="dj-btns" style="margin-top: 30vh;">
+    <button class="dj-btn" @tap="toggleBaseDialog">
+      基础 Dialog
+    </button>
+    <button class="dj-btn" @tap="toggleWithoutTitleDialog">
+      Dialog - 无标题
+    </button>
+    <button class="dj-btn" @tap="toggleButtonDialog">
+      Dialog - 自定义显示按钮
+    </button>
+    <button class="dj-btn" @tap="toggleVerticalDialog">
+      Dialog - 按钮纵向排布
+    </button>
+  </view>
+<Dialog1 id="dialog"></Dialog1>
+</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Dialog1 from '@/components/wepy-dialog/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Dialog extends wepy.page {
+    config = {
+      navigationBarTitleText: "Dialog 弹出框"
+    }
+    components = {
+      Dialog1: Dialog1,
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      checked: false
+    }
+
+    computed = {
+    }
+
+    methods = {
+      toggleBaseDialog() {
+        this.$invoke('Dialog1','showDialog',{
+          title: '弹窗',
+          content: '这是一个模态弹窗',
+          showCancel: true
+        });
+      },
+
+      toggleWithoutTitleDialog() {
+        this.$invoke('Dialog1','showDialog',{
+          content: '这是一个模态弹窗'
+        })
+      },
+
+      toggleButtonDialog() {
+      this.$invoke('Dialog1','showDialog',{
+          title: '弹窗',
+          content: '这是一个模态弹窗',
+          buttons: [{
+            text: '现金支付',
+            color: 'red',
+            type: 'cash'
+          }, {
+            text: '微信支付',
+            color: '#3CC51F',
+            type: 'wechat'
+          }, {
+            text: '取消',
+            type: 'cancel'
+          }]
+        })
+      },
+
+      toggleVerticalDialog() {
+      this.$invoke('Dialog1','showDialog',{
+          title: '弹窗',
+          content: '这是一个模态弹窗',
+          buttonsShowVertical: true,
+          buttons: [{
+            text: '现金支付',
+            color: 'red',
+            type: 'cash'
+          }, {
+            text: '微信支付',
+            color: '#3CC51F',
+            type: 'wechat'
+          }, {
+            text: '取消',
+            type: 'cancel'
+          }]
+        })
+      }
+    }
+
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

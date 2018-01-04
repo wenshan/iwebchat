@@ -1,0 +1,59 @@
+<style lang="less">
+</style>
+<template>
+<view class="container">
+
+  <view class="doc-title">TOPTIPS</view>
+
+  <view class="dj-btns" style="margin-top: 30vh;">
+    <button class="dj-btn" @tap="showTopTips">
+      显示toptips
+    </button>
+  </view>
+</view>
+<Toptips1 data="{{ djTopTips }}"></Toptips1>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Toptips1 from '@/components/wepy-toptips/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Tab extends wepy.page {
+    config = {
+      navigationBarTitleText: "Toptips 顶部提示"
+    }
+    components = {
+      Toptips1: Toptips1
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+
+    }
+
+    computed = {
+    }
+
+    methods = {
+      showTopTips() {
+        this.$invoke('Toptips1','show',{content:'这是一个模态弹窗'});
+      }
+    }
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

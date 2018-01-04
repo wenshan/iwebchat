@@ -1,0 +1,77 @@
+<style lang="less">
+.dj-tag + .dj-tag {
+  margin-left: 10px;
+}
+</style>
+<template>
+  <view class="container">
+
+    <view class="doc-title">Tag</view>
+
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-tag">灰色</view>
+        <view class="dj-tag dj-tag--danger">红色</view>
+        <view class="dj-tag dj-tag--disabled">不可用</view>
+      </view>
+    </view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-tag dj-tag--danger">会员折扣</view>
+        <view class="dj-tag dj-tag--warn">返现</view>
+        <view class="dj-tag dj-tag--primary">返现</view>
+        <view class="dj-tag dj-tag--primary dj-tag--disabled">不可用</view>
+      </view>
+    </view>
+
+      <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-tag dj-tag--plain">灰色</view>
+        <view class="dj-tag dj-tag--danger dj-tag--plain">会员折扣</view>
+        <view class="dj-tag dj-tag--warn dj-tag--plain">返现</view>
+        <view class="dj-tag dj-tag--primary dj-tag--plain">返现</view>
+        <view class="dj-tag dj-tag--primary dj-tag--plain dj-tag--disabled">返现不可用</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Tag1 from '@/components/wepy-tag/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Tab extends wepy.page {
+    config = {
+      navigationBarTitleText: "Tag 标记"
+    }
+    components = {
+      Tag1: Tag1,
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

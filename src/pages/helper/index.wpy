@@ -1,0 +1,89 @@
+<template>
+    <view class="container">
+
+        <view class="dj-panel">
+            <view class="dj-cell">
+                <view class="dj-cell__bd">
+                    <view class="dj-pull-right">dj-pull-right: 往右靠</view>
+                </view>
+            </view>
+
+            <view class="dj-cell">
+                <view class="dj-cell__bd">
+                    <view class="dj-text-deleted">dj-text-deleted：被删除的效果</view>
+                </view>
+            </view>
+
+            <view class="dj-cell">
+                <view class="dj-cell__bd">
+                    <view>
+                        <view class="dj-font-12">dj-font-12：字号12</view>
+                        <view class="dj-font-12 dj-font-bold">dj-font-bold：再来个加粗</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="dj-cell">
+                <view class="dj-cell__bd">
+                    <view>
+                        <view class="dj-font-16">dj-font-16：字号16</view>
+                        <view class="dj-font-16 dj-font-bold">dj-font-bold：再来个加粗</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="dj-cell">
+                <view class="dj-cell__bd">
+                    <view class="">
+                        <view>字体颜色</view>
+                        <view class="dj-c-red">dj-c-red: 红色</view>
+                        <view class="dj-c-gray">dj-c-gray: 灰色</view>
+                        <view class="dj-c-gray-dark">dj-c-gray-dark: 再灰一点点</view>
+                        <view class="dj-c-gray-darker">dj-c-gray-darker: 更深的灰色</view>
+                        <view class="dj-c-black">dj-c-black: 黑色</view>
+                        <view class="dj-c-blue">dj-c-blue: 蓝色</view>
+                        <view class="dj-c-green">dj-c-green: 绿色</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="dj-cell">
+                <view class="dj-cell__bd">
+                    <view>dj-arrow：箭头</view>
+                    <view class="dj-arrow"></view>
+                </view>
+            </view>
+
+            <view class="dj-cell">
+                <view class="dj-cell__bd">
+                    <view class="dj-ellipsis" style="width: 300px;">
+                        dj-ellipsis：单行点点点
+                        ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+                    </view>
+                </view>
+            </view>
+
+            <view class="dj-cell dj-cell--last-child">
+                <view class="dj-cell__bd">
+                    <view class="dj-ellipsis--l2">
+                        dj-ellipsis--l2：单行点点点
+                        ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+
+</template>
+
+<script>
+import wepy from 'wepy'
+import Helper from '@/components/wepy-helper/index'
+export default class HelperEx extends wepy.page {
+    config = {
+        navigationBarTitleText: 'Helper 基础样式'
+    }
+}
+</script>

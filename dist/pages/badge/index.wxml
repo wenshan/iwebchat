@@ -1,0 +1,37 @@
+
+  <view class="container">
+
+    <view class="doc-title">BADGE</view>
+
+    <view class="demo">
+
+      <view class="demo__item">
+        
+    <view class="{{$badge1$className || ''}} dj-badge">
+      <view class="dj-badge__count"  wx:if="{{$badge1$countText}}">{{$badge1$countText}}</view>
+    </view>
+
+      </view>
+      <view class="demo__item">
+        
+    <view class="{{$badge2$className || ''}} dj-badge">
+      <view class="dj-badge__count"  wx:if="{{$badge2$countText}}">{{$badge2$countText}}</view>
+    </view>
+
+      </view>
+      <view class="demo__item">
+        
+    <view class="{{$badge3$className || ''}} dj-badge">
+      <view class="dj-badge__count"  wx:if="{{$badge3$countText}}">{{$badge3$countText}}</view>
+    </view>
+
+      </view>
+      <view class="demo__item">
+        
+    <view class="{{$badge4$className || ''}} dj-badge">
+      <view class="dj-badge__count"  wx:if="{{$badge4$countText}}">{{$badge4$countText}}</view>
+    </view>
+
+      </view>
+    </view>
+  </view>

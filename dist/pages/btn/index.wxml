@@ -1,0 +1,112 @@
+
+<view class="container">
+
+  <view class="doc-title">BUTTON</view>
+
+  <view class="dj-panel-title">普通按钮</view>
+  <view class="dj-panel">
+    <view class="dj-btns">
+      
+    <button class="{{$btn1$type?('dj-btn--'+$btn1$type):''}} {{$btn1$size?('dj-btn--'+$btn1$size):''}} {{$btn1$disabled?('dj-btn--disabled'):''}} {{$btn1$loading?('dj-btn--loading'):''}} dj-btn {{$btn1$className}}" bindtap="$btn1$handletap" disabled="{{$btn1$disabled}}" type="{{$btn1$nativeType?$btn1$nativeType:''}}" data-wpyhandletap-a="{{$btn1$componentId}}">
+        取消订单
+    </button>
+
+
+      
+    <button class="{{$btn2$type?('dj-btn--'+$btn2$type):''}} {{$btn2$size?('dj-btn--'+$btn2$size):''}} {{$btn2$disabled?('dj-btn--disabled'):''}} {{$btn2$loading?('dj-btn--loading'):''}} dj-btn {{$btn2$className}}" bindtap="$btn2$handletap" disabled="{{$btn2$disabled}}" type="{{$btn2$nativeType?$btn2$nativeType:''}}" data-wpyhandletap-a="{{$btn2$componentId}}">
+        确认付款
+    </button>
+
+      
+    <button class="{{$btn3$type?('dj-btn--'+$btn3$type):''}} {{$btn3$size?('dj-btn--'+$btn3$size):''}} {{$btn3$disabled?('dj-btn--disabled'):''}} {{$btn3$loading?('dj-btn--loading'):''}} dj-btn {{$btn3$className}}" bindtap="$btn3$handletap" disabled="{{$btn3$disabled}}" type="{{$btn3$nativeType?$btn3$nativeType:''}}" data-wpyhandletap-a="{{$btn3$componentId}}">
+        确认付款
+    </button>
+
+      
+    <button class="{{$btn4$type?('dj-btn--'+$btn4$type):''}} {{$btn4$size?('dj-btn--'+$btn4$size):''}} {{$btn4$disabled?('dj-btn--disabled'):''}} {{$btn4$loading?('dj-btn--loading'):''}} dj-btn {{$btn4$className}}" bindtap="$btn4$handletap" disabled="{{$btn4$disabled}}" type="{{$btn4$nativeType?$btn4$nativeType:''}}" data-wpyhandletap-a="{{$btn4$componentId}}">
+        确认付款
+    </button>
+
+    </view>
+  </view>
+
+  <view class="dj-panel-title">大号按钮，没有边框线及圆角</view>
+  <view class="dj-panel">
+    
+    <button class="{{$btn5$type?('dj-btn--'+$btn5$type):''}} {{$btn5$size?('dj-btn--'+$btn5$size):''}} {{$btn5$disabled?('dj-btn--disabled'):''}} {{$btn5$loading?('dj-btn--loading'):''}} dj-btn {{$btn5$className}}" bindtap="$btn5$handletap" disabled="{{$btn5$disabled}}" type="{{$btn5$nativeType?$btn5$nativeType:''}}" data-wpyhandletap-a="{{$btn5$componentId}}">
+        确认付款
+  
+    </button>
+
+    
+    <button class="{{$btn6$type?('dj-btn--'+$btn6$type):''}} {{$btn6$size?('dj-btn--'+$btn6$size):''}} {{$btn6$disabled?('dj-btn--disabled'):''}} {{$btn6$loading?('dj-btn--loading'):''}} dj-btn {{$btn6$className}}" bindtap="$btn6$handletap" disabled="{{$btn6$disabled}}" type="{{$btn6$nativeType?$btn6$nativeType:''}}" data-wpyhandletap-a="{{$btn6$componentId}}">
+        
+    立即购买
+  
+    </button>
+
+    
+    <button class="{{$btn7$type?('dj-btn--'+$btn7$type):''}} {{$btn7$size?('dj-btn--'+$btn7$size):''}} {{$btn7$disabled?('dj-btn--disabled'):''}} {{$btn7$loading?('dj-btn--loading'):''}} dj-btn {{$btn7$className}}" bindtap="$btn7$handletap" disabled="{{$btn7$disabled}}" type="{{$btn7$nativeType?$btn7$nativeType:''}}" data-wpyhandletap-a="{{$btn7$componentId}}">
+        
+    立即购买
+  
+    </button>
+
+  </view>
+
+  <view class="dj-panel-title">小号按钮</view>
+  <view class="dj-panel" style="padding: 15px;">
+    
+    <button class="{{$btn8$type?('dj-btn--'+$btn8$type):''}} {{$btn8$size?('dj-btn--'+$btn8$size):''}} {{$btn8$disabled?('dj-btn--disabled'):''}} {{$btn8$loading?('dj-btn--loading'):''}} dj-btn {{$btn8$className}}" bindtap="$btn8$handletap" disabled="{{$btn8$disabled}}" type="{{$btn8$nativeType?$btn8$nativeType:''}}" data-wpyhandletap-a="{{$btn8$componentId}}">
+        
+    取消订单
+  
+    </button>
+
+    
+    <button class="{{$btn9$type?('dj-btn--'+$btn9$type):''}} {{$btn9$size?('dj-btn--'+$btn9$size):''}} {{$btn9$disabled?('dj-btn--disabled'):''}} {{$btn9$loading?('dj-btn--loading'):''}} dj-btn {{$btn9$className}}" bindtap="$btn9$handletap" disabled="{{$btn9$disabled}}" type="{{$btn9$nativeType?$btn9$nativeType:''}}" data-wpyhandletap-a="{{$btn9$componentId}}">
+        
+    确认付款
+  
+    </button>
+
+  </view>
+
+  <view class="dj-panel-title">迷你按钮</view>
+  <view class="dj-panel" style="padding: 15px;">
+  
+    <button class="{{$btn10$type?('dj-btn--'+$btn10$type):''}} {{$btn10$size?('dj-btn--'+$btn10$size):''}} {{$btn10$disabled?('dj-btn--disabled'):''}} {{$btn10$loading?('dj-btn--loading'):''}} dj-btn {{$btn10$className}}" bindtap="$btn10$handletap" disabled="{{$btn10$disabled}}" type="{{$btn10$nativeType?$btn10$nativeType:''}}" data-wpyhandletap-a="{{$btn10$componentId}}">
+        
+  确认付款
+
+    </button>
+
+  </view>
+
+  <view class="dj-panel-title">Loading</view>
+  <view class="dj-panel">
+    <view class="dj-btns">
+    
+    <button class="{{$btn11$type?('dj-btn--'+$btn11$type):''}} {{$btn11$size?('dj-btn--'+$btn11$size):''}} {{$btn11$disabled?('dj-btn--disabled'):''}} {{$btn11$loading?('dj-btn--loading'):''}} dj-btn {{$btn11$className}}" bindtap="$btn11$handletap" disabled="{{$btn11$disabled}}" type="{{$btn11$nativeType?$btn11$nativeType:''}}" data-wpyhandletap-a="{{$btn11$componentId}}">
+        
+    确认付款
+  
+    </button>
+
+    </view>
+  </view>
+
+  <view class="dj-panel-title">Disabled</view>
+  <view class="dj-panel">
+    <view class="dj-btns">
+    
+    <button class="{{$btn12$type?('dj-btn--'+$btn12$type):''}} {{$btn12$size?('dj-btn--'+$btn12$size):''}} {{$btn12$disabled?('dj-btn--disabled'):''}} {{$btn12$loading?('dj-btn--loading'):''}} dj-btn {{$btn12$className}}" bindtap="$btn12$handletap" disabled="{{$btn12$disabled}}" type="{{$btn12$nativeType?$btn12$nativeType:''}}" data-wpyhandletap-a="{{$btn12$componentId}}">
+        
+      确认付款
+    
+    </button>
+
+    </view>
+  </view>
+
+</view>

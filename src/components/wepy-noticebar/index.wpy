@@ -1,0 +1,85 @@
+<template name="dj-noticebar">
+    <view class="dj-noticebar">
+        <view
+            id="{{ noticebar.componentId }}__content-wrap"
+            style="height: 18px; overflow: hidden; position: relative;"
+        >
+            <view
+                animation="{{ animationData }}"
+                id="{{ noticebar.componentId }}__content"
+                style="position: absolute; white-space: nowrap;"
+            >
+                {{ noticebar.text }}
+            </view>
+        </view>
+    </view>
+</template>
+<style>
+@import './index.wxss'
+</style>
+<script>
+import wepy from 'wepy'
+export default class Noticebar extends wepy.component {
+    props = {
+        noticebar:{
+            twoWay: true,
+            type:[Object],
+            default: {}
+        }
+    }
+
+    data = {
+        animationData: {
+            width: undefined,
+            wrapWidth: undefined,
+            animation: null,
+            resetAnimation: null
+        }
+    };
+    methods = {
+
+        initZanNoticeBarScroll() {
+            var _self = this;
+            const componentId = this.noticebar.componentId;
+            console.log(this,componentId);
+            var currentComponent = this.animationData;
+            wx.createSelectorQuery().select(`#${componentId}__content`).boundingClientRect((rect) => {
+            console.log(rect,'rect');
+            if (rect && rect.width) {
+                currentComponent.width = rect.width;
+                wx.createSelectorQuery().select(`#${componentId}__content-wrap`).boundingClientRect((rect) => {
+                    currentComponent.wrapWidth = rect.width;
+                if (currentComponent.wrapWidth < currentComponent.width) {
+                    var mstime = currentComponent.width / 40 * 1000;
+                    currentComponent.animation = wx.createAnimation({
+                        duration: mstime,
+                        timingFunction: 'linear'
+                    });
+                    currentComponent.resetAnimation = wx.createAnimation({
+                        duration: 0,
+                        timingFunction: 'linear'
+                    });
+                    _self.scrollZanNoticeBar(componentId, mstime);
+                }
+            }).exec();
+            } else {
+                console.warn('页面缺少 noticebar 元素');
+            }
+        }).exec();
+        }
+    }
+
+    scrollZanNoticeBar = (componentId, mstime) => {
+        var currentComponent = this.animationData;
+        var resetAnimationData = currentComponent.resetAnimation.translateX(currentComponent.wrapWidth).step();
+            var aninationData = currentComponent.animation.translateX(-mstime * 40 / 1000).step();
+            setTimeout(() => {
+            this.animationData = aninationData.export();
+        }, 100);
+
+            setTimeout(() => {
+            this.scrollZanNoticeBar(componentId, mstime);
+        }, mstime);
+    }
+}
+</script>

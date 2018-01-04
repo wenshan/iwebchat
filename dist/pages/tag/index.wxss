@@ -1,0 +1,2 @@
+@import "./../../components/wepy-tag/index.wxss";
+.dj-tag+.dj-tag{margin-left:10px}

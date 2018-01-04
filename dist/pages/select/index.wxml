@@ -1,0 +1,43 @@
+
+  <view class="container">
+
+    <view class="doc-title">SELECT</view>
+
+    <view class="dj-panel-title">基础用法</view>
+    <view class="dj-panel">
+      <view>
+        
+  <radio-group class="dj-select__list" bindchange="$Select1$_handleSelectChange" data-wpy_handleselectchange-a="{{$Select1$componentId}}">
+    <label  wx:for="{{ $Select1$items }}" wx:key="value">
+      <view class="dj-cell">
+        <radio class="dj-select__radio" value="{{ item.value }}" checked="{{ item.value == $Select1$checkedValue }}"/>
+        <view class="dj-cell__bd" style="{{'padding-left: ' + item.padding + 'px;'}}{{item.value === $Select1$checkedValue?('color: '+($Select1$activeColor||'#ff4444')):''}}">{{ item.name }}</view>
+        <view wx:if="{{ item.value == $Select1$checkedValue }}" class="dj-cell__ft">
+          <icon type="success_no_circle" color="{{ $Select1$activeColor?$Select1$activeColor:'#ff4444'}}" size="14"/>
+        </view>
+      </view>
+    </label>
+  </radio-group>
+
+      </view>
+    </view>
+
+    <view class="dj-panel-title">自定义高亮颜色</view>
+    <view class="dj-panel">
+      <view>
+        
+  <radio-group class="dj-select__list" bindchange="$Select2$_handleSelectChange" data-wpy_handleselectchange-a="{{$Select2$componentId}}">
+    <label  wx:for="{{ $Select2$items }}" wx:key="value">
+      <view class="dj-cell">
+        <radio class="dj-select__radio" value="{{ item.value }}" checked="{{ item.value == $Select2$checkedValue }}"/>
+        <view class="dj-cell__bd" style="{{'padding-left: ' + item.padding + 'px;'}}{{item.value === $Select2$checkedValue?('color: '+($Select2$activeColor||'#ff4444')):''}}">{{ item.name }}</view>
+        <view wx:if="{{ item.value == $Select2$checkedValue }}" class="dj-cell__ft">
+          <icon type="success_no_circle" color="{{ $Select2$activeColor?$Select2$activeColor:'#ff4444'}}" size="14"/>
+        </view>
+      </view>
+    </label>
+  </radio-group>
+
+      </view>
+    </view>
+  </view>

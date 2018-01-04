@@ -1,0 +1,172 @@
+<template>
+<view class="container">
+    <view class="doc-title">Field</view>
+    <!-- Field 基础用法 -->
+    <view class="dj-panel-title">基础用法</view>
+    <view class="dj-panel">
+        <Field1 :field.sync="fieldName"></Field1>
+        <Field2 :field.sync="fieldTel"></Field2>
+        <Field3 :field.sync="fieldAddress"></Field3>
+    </view>
+    <view class="dj-btns">
+        <button class="dj-btn dj-btn--primary" @tap="clearInput">清除输入</button>
+    </view>
+
+    <!-- 去除标题后的输入框样式 -->
+    <view class="dj-panel-title">无标题输入框</view>
+    <view class="dj-panel">
+        <Field4 :field.sync="fieldNotitle"></Field4>
+    </view>
+
+    <view class="dj-btns">
+        <button
+            class="dj-btn dj-btn--primary"
+            @tap="clearTextarea">清除输入</button>
+    </view>
+
+    <!-- 使用 Field 圆角样式 -->
+    <view class="dj-panel-title field__title--radius">圆角输入框</view>
+    <Field5 :field.sync="fieldTotalPrice"></Field5>
+    <Field6 :field.sync="fieldExcludePrice"></Field6>
+    <Field7 :field.sync="fieldNotitleWraped"></Field7>
+    <!-- form 中使用 Field -->
+    <view class="dj-panel-title">Form 表单中的field应用</view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="dj-panel">
+            <Field8 :field.sync="fieldFormName"></Field8>
+            <Field9 :field.sync="fieldFormTel"></Field9>
+            <view class="dj-btns">
+                <button
+                    class="dj-btn dj-btn--primary"
+                    formType="submit">提交数据</button>
+                <button
+                    class="dj-btn"
+                    formType="reset">重置数据</button>
+            </view>
+        </view>
+    </form>
+</view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Field from '@/components/wepy-field/index'
+
+export default class FieldEx extends wepy.page {
+    config = {
+        navigationBarTitleText: 'Field 输入法框'
+    }
+
+    components = {
+        Field1: Field,
+        Field2: Field,
+        Field3: Field,
+        Field4: Field,
+        Field5: Field,
+        Field6: Field,
+        Field7: Field,
+        Field8: Field,
+        Field9: Field
+    }
+
+    data = {
+        // 基础类型输入框配置
+        fieldName:{
+            name: 'fieldName',
+            title: '收货人',
+            placeholder: '名字',
+            value: '123'
+        },
+        fieldTel: {
+            error: true,
+            name: 'fieldTel',
+            title: '联系电话',
+            inputType: 'number',
+            placeholder: '请输入手机号',
+            value: '123'
+        },
+        fieldAddress: {
+            name: 'fieldAddress',
+            title: '详细地址',
+            type: 'textarea',
+            placeholder: '请输入详细地址'
+        },
+        // 无标题输入框
+        fieldNotitle: {
+            placeholder: '请输入收货人姓名',
+            value: '',
+            name: 'fieldNotitle',
+            componentId: 'textarea:test'
+        },
+        // 圆角输入框
+        fieldTotalPrice: {
+            right: true,
+            name: 'fieldTotalPrice',
+            mode: 'wrapped',
+            title: '消费总额',
+            inputType: 'number',
+            placeholder: '询问收银员后输入'
+        },
+        fieldExcludePrice: {
+            right: true,
+            error: true,
+            name: 'fieldExcludePrice',
+            mode: 'wrapped',
+            title: '不参与优惠金额',
+            inputType: 'number',
+            placeholder: '询问收银员后输入'
+        },
+        fieldNotitleWraped: {
+            mode: 'wrapped',
+            inputType: 'number',
+            placeholder: '请输入消费金额'
+        },
+        // Form 中使用输入框
+        fieldFormName: {
+            name: 'fieldFormName',
+            placeholder: '请输入收货人姓名',
+            componentId: 'form:test:name'
+        },
+        fieldFormTel: {
+            name: 'fieldFormTel',
+            inputType: 'tel',
+            placeholder: '请输入收货人手机号码',
+            componentId: 'form:test:tel'
+        }
+    }
+
+    methods = {
+        clearInput (){
+            this.$invoke('Field1', 'clearInput', {});
+            this.$invoke('Field2', 'clearInput', {});
+            this.$invoke('Field3', 'clearInput', {});
+            this.$apply();
+        },
+        clearTextarea (){
+            this.$invoke('Field4', 'clearInput', {});
+        }
+    }
+
+    events = {
+        /*
+         * Field
+         * event1 => 子组件this， event2 => 子组件event
+         * FildOnChange => 子组件onchange 事件
+         */
+        'FildOnChange': (event1, event2) => {
+            console.log(event2.currentTarget);
+            console.log(event2,'FildOnChange');
+        }
+    }
+
+    initSetValue = () => {
+        this.$invoke('Field3', 'initSetValue', {value:1000000});
+    }
+
+    onReady = () => {
+        this.initSetValue();
+    }
+
+}
+
+</script>

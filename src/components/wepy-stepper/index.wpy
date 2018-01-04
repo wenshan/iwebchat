@@ -1,0 +1,179 @@
+/**
+ * Stepper Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="css">
+.dj-stepper {
+  color: #666;
+}
+.dj-stepper view {
+  display: inline-block;
+  line-height: 20px;
+  padding: 5px 0;
+  text-align: center;
+  min-width: 40px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-size: 12px;
+  border: 1rpx solid #999;
+}
+.dj-stepper .dj-stepper__minus {
+  border-right: none;
+  border-radius: 2px 0 0 2px;
+}
+.dj-stepper .dj-stepper__text {
+  border: 1rpx solid #999;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  height: 30px;
+  width: 40px;
+  /* 重置 input 默认样式 */
+  min-height: auto;
+  font-size: 12px;
+  line-height: 30px;
+}
+.dj-stepper .dj-stepper__plus {
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+}
+.dj-stepper .dj-stepper--disabled {
+  background: #f8f8f8;
+  color: #bbb;
+  border-color: #e8e8e8;
+}
+.dj-stepper--small view {
+  min-width: 36px;
+  line-height: 18px;
+}
+.dj-stepper--small .dj-stepper__text {
+  width: 36px;
+  line-height: 28px;
+  height: 28px;
+}
+</style>
+<template>
+  <view class="dj-stepper {{ size === 'small' ? 'dj-stepper--small' : '' }} {{className}}">
+    <view
+      class="dj-stepper__minus {{ step.stepper <= step.min ? 'dj-stepper--disabled' : '' }}"
+      data-component-id="{{ componentId }}"
+      data-stepper="{{ step.stepper }}"
+      data-disabled="{{ step.stepper <= step.min }}"
+      @tap="_handledjStepperMinus"
+    >-</view>
+    <input
+      class="dj-stepper__text {{ step.min >= step.max ? 'dj-stepper--disabled' : '' }}"
+      type="number"
+      data-component-id="{{ componentId }}"
+      data-min="{{ step.min }}"
+      data-max="{{ step.max }}"
+      value="{{ step.stepper }}"
+      disabled="{{ step.min >= step.max }}"
+      @blur="_handledjStepperBlur"
+    ></input>
+    <view
+      class="dj-stepper__plus {{ step.stepper >= step.max ? 'dj-stepper--disabled' : '' }}"
+      data-component-id="{{ componentId }}"
+      data-stepper="{{ step.stepper }}"
+      data-disabled="{{ step.stepper >= step.max }}"
+      @tap="_handledjStepperPlus"
+    >+</view>
+  </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    export default class Stepper extends wepy.component {
+      props={
+        componentId:{
+          default:''
+        },
+        className:{
+          type:String,
+          default:''
+        },
+        step:{
+          type:Object,
+          default:{
+            min:0,
+            max:20,
+            stepper:10
+          }
+        },
+        size:{
+          type:String,
+          default:null
+        },
+        handleStepperChange:{
+          type:Function,
+          default:function(v){return v}
+        }
+      }
+      events = {
+      }
+      methods = {
+
+        _handledjStepperMinus(e) {
+          this.handle(e, -1);
+        },
+
+        _handledjStepperPlus(e) {
+          this.handle(e, +1);
+        },
+
+        _handledjStepperBlur(e) {
+          var dataset = e.currentTarget.dataset;
+          var componentId = dataset.componentId;
+          var max = +dataset.max;
+          var min = +dataset.min;
+          var value = e.detail.value;
+
+          if (!value) {
+            setTimeout(() => {
+              this.callback(componentId, min);
+            }, 16);
+            this.callback(componentId, value);
+            return '' + value;
+          }
+
+          value = +value;
+          if (value > max) {
+            value = max;
+          } else if (value < min) {
+            value = min;
+          }
+
+          this.callback(componentId, value);
+
+          return '' + value;
+        }
+
+        }
+        handle(e, num) {
+          var dataset = e.currentTarget.dataset;
+          var componentId = dataset.componentId;
+          var disabled = dataset.disabled;
+          var stepper = +dataset.stepper;
+
+          if (disabled) return null;
+
+          this.callback(componentId, stepper + num);
+        }
+
+        callback(componentId, stepper) {
+          stepper = +stepper;
+          var e = { componentId, stepper };
+
+          if (this.handleStepperChange) {
+            this.handleStepperChange(e);
+          } else {
+            console.warn('页面缺少 handleStepperChange 回调函数');
+          }
+        }
+      onLoad() {
+      }
+    }
+</script>

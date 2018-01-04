@@ -1,0 +1,121 @@
+/**
+ * Card Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="css">
+.dj-card {
+  margin-left: 0px;
+  width: auto;
+  padding: 5px 15px;
+  overflow: hidden;
+  position: relative;
+  font-size: 14px;
+}
+
+.dj-card__thumb {
+  width: 90px;
+  height: 90px;
+  float: left;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.dj-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.dj-card__detail {
+  margin-left: 100px;
+  width: auto;
+  position: relative;
+}
+
+.dj-card__detail-row {
+  overflow: hidden;
+  line-height: 20px;
+  min-height: 20px;
+  margin-bottom: 3px;
+}
+
+.dj-card__right-col {
+  float: right;
+}
+
+.dj-card__left-col {
+  margin-right: 80px;
+}
+</style>
+<template>
+  <view class="dj-card {{className}}" wx:if="{{src}}" @tap="handletap({{componentId}})">
+    <view class="dj-card__thumb">
+      <image class="dj-card__img"
+        src="{{src}}"
+        mode="aspectFit"
+      ></image>
+    </view>
+    <view class="dj-card__detail" wx:if="{{rightText||leftText}}">
+      <view class="dj-card__detail-row">
+        <view class="dj-card__right-col" wx:if="{{rightText}}">{{rightText}}</view>
+        <view class="dj-card__left-col dj-ellipsis--l2" wx:if="{{leftText}}">
+           {{leftText}}
+        </view>
+      </view>
+      <slot></slot>
+    </view>
+  </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    export default class Card extends wepy.component {
+      props={
+        componentId:{
+          default:''
+        },
+        className: {
+          type: String,
+          default: 'default'
+        },
+        src: {
+          type: String,
+          default: 'default'
+        },
+        leftText:{
+          type:[String,Number],
+          default:''
+        },
+        rightText:{
+          type:[String,Number],
+          default:''
+        },
+        handleClick:{
+          type:Function,
+          default:function(v){return v}
+        }
+      }
+      events = {
+      }
+      methods = {
+        handletap(id){
+          this.handleClick(id);
+        }
+      }
+
+      onLoad() {
+      }
+    }
+</script>

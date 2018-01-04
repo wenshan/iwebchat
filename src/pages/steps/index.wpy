@@ -1,0 +1,195 @@
+
+<style lang="less">
+.my-class {
+  padding: 10px;
+}
+.my-class .dj-steps__step--done {
+  color: #f44;
+}
+</style>
+<template>
+  <view class="container">
+
+    <view class="doc-title">STEPS</view>
+
+    <view class="dj-panel">
+      <view class="dj-cell">
+        <view class="dj-cell__bd">
+          <Steps1
+            type="horizon"
+            :steps.sync="steps"
+          >
+        </Steps1>
+        </view>
+      </view>
+
+      <view class="dj-cell">
+        <view class="dj-cell__bd">
+          <Steps2
+            type="horizon"
+            :steps.sync="steps2"
+          ></Steps2>
+        </view>
+      </view>
+
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-cell__bd">
+          <Steps3
+            type="horizon"
+            :steps.sync="steps3"
+          ></Steps3>
+        </view>
+      </view>
+    </view>
+
+    <view class="dj-panel-title">有描述的steps</view>
+    <view class="dj-panel">
+      <view class="dj-cell">
+        <view class="dj-cell__bd">
+          <Steps4
+            type="horizon"
+            :steps.sync="steps3"
+            :hasDesc.sync="true"
+          ></Steps4>
+        </view>
+      </view>
+
+    <view class="dj-panel-title">垂直方向的steps</view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell">
+        <view class="dj-cell__bd">
+          <Steps5
+            type="vertical"
+            :steps.sync="steps"
+            :hasDesc.sync="true"
+          ></Steps5>
+        </view>
+      </view>
+
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-cell__bd">
+          <Steps6
+            type="vertical"
+            :steps.sync="steps"
+          ></Steps6>
+        </view>
+      </view>
+    </view>
+
+    <view class="dj-panel-title">可自定义class</view>
+    <view class="dj-panel">
+      <view class="dj-cell__bd">
+        <Steps7
+          type="vertical"
+          :steps.sync="steps"
+          className="my-class"
+        ></Steps7>
+      </view>
+    </view>
+  </view>
+</view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+  import Steps1 from '@/components/wepy-steps/index'
+  export default class Steps extends wepy.page {
+    constructor(){
+      super();
+    }
+    config = {
+      navigationBarTitleText: "Steps 步骤条"
+    }
+    components = {
+      Steps1: Steps1,
+      Steps2: Steps1,
+      Steps3: Steps1,
+      Steps4: Steps1,
+      Steps5: Steps1,
+      Steps6: Steps1,
+      Steps7: Steps1,
+      Steps8: Steps1
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      steps: [
+        {
+          current: true,
+          done: true,
+          text: '步骤一',
+          desc: '10.01'
+        },
+        {
+          done: false,
+          current: false,
+          text: '步骤二',
+          desc: '10.02'
+        },
+        {
+          done: false,
+          current: false,
+          text: '步骤三'
+        }
+      ],
+      steps2: [
+        {
+          current: false,
+          done: true,
+          text: '步骤一',
+          desc: '10.01'
+        },
+        {
+          done: true,
+          current: true,
+          text: '步骤二',
+          desc: '10.02'
+        },
+        {
+          done: false,
+          current: false,
+          text: '步骤三',
+          desc: '10.03'
+        }
+      ],
+      steps3: [
+        {
+          current: false,
+          done: true,
+          text: '步骤一',
+          desc: '10.01'
+        },
+        {
+          done: true,
+          current: false,
+          text: '步骤二',
+          desc: '10.02'
+        },
+        {
+          done: true,
+          current: true,
+          text: '步骤三',
+          desc: '10.03'
+        }
+      ]
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+    events = {
+    }
+
+    onLoad() {
+
+    }
+  }
+</script>

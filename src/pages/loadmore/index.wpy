@@ -1,0 +1,45 @@
+<template>
+    <view class="container">
+        <view class="doc-title">LOADMORE</view>
+
+        <Loadmore1 :loading.sync="true"></Loadmore1>
+        <Loadmore2 :nodata.sync="true"></Loadmore2>
+        <Loadmore3 :nomore.sync="true"></Loadmore3>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+import Loadmore from '@/components/wepy-loadmore/index'
+
+export default class IconEx extends wepy.page {
+    config = {
+        "navigationBarTitleText": "Loadmore 加载"
+    }
+    components = {
+        Loadmore1:Loadmore,
+        Loadmore2:Loadmore,
+        Loadmore3:Loadmore
+    }
+    data = {
+    }
+
+}
+
+</script>
+
+<style>
+.icon-wrap {
+    width: 33.33333%;
+    height: 100px;
+    float: left;
+    text-align: center;
+}
+.icon-classname {
+    color: #999;
+    font-size: 10px;
+}
+.dj-icon {
+    font-size: 24px;
+    margin: 20px;
+}
+</style>

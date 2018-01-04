@@ -1,0 +1,31 @@
+
+  <view class="container">
+
+    <view class="doc-title">Tag</view>
+
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-tag">灰色</view>
+        <view class="dj-tag dj-tag--danger">红色</view>
+        <view class="dj-tag dj-tag--disabled">不可用</view>
+      </view>
+    </view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-tag dj-tag--danger">会员折扣</view>
+        <view class="dj-tag dj-tag--warn">返现</view>
+        <view class="dj-tag dj-tag--primary">返现</view>
+        <view class="dj-tag dj-tag--primary dj-tag--disabled">不可用</view>
+      </view>
+    </view>
+
+      <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-tag dj-tag--plain">灰色</view>
+        <view class="dj-tag dj-tag--danger dj-tag--plain">会员折扣</view>
+        <view class="dj-tag dj-tag--warn dj-tag--plain">返现</view>
+        <view class="dj-tag dj-tag--primary dj-tag--plain">返现</view>
+        <view class="dj-tag dj-tag--primary dj-tag--plain dj-tag--disabled">返现不可用</view>
+      </view>
+    </view>
+  </view>

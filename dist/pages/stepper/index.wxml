@@ -1,0 +1,36 @@
+
+  <view class="container">
+    <view class="doc-title">Stepper</view>
+
+    <view style="padding: 40px 15px">
+      
+  <view class="dj-stepper {{ $Stepper1$size === 'small' ? 'dj-stepper--small' : '' }} {{$Stepper1$className}}">
+    <view class="dj-stepper__minus {{ $Stepper1$step.stepper <= $Stepper1$step.min ? 'dj-stepper--disabled' : '' }}" data-component-id="{{ $Stepper1$componentId }}" data-stepper="{{ $Stepper1$step.stepper }}" data-disabled="{{ $Stepper1$step.stepper <= $Stepper1$step.min }}" bindtap="$Stepper1$_handledjStepperMinus">-</view>
+    <input class="dj-stepper__text {{ $Stepper1$step.min >= $Stepper1$step.max ? 'dj-stepper--disabled' : '' }}" type="number" data-component-id="{{ $Stepper1$componentId }}" data-min="{{ $Stepper1$step.min }}" data-max="{{ $Stepper1$step.max }}" value="{{ $Stepper1$step.stepper }}" disabled="{{ $Stepper1$step.min >= $Stepper1$step.max }}" bindblur="$Stepper1$_handledjStepperBlur"/>
+    <view class="dj-stepper__plus {{ $Stepper1$step.stepper >= $Stepper1$step.max ? 'dj-stepper--disabled' : '' }}" data-component-id="{{ $Stepper1$componentId }}" data-stepper="{{ $Stepper1$step.stepper }}" data-disabled="{{ $Stepper1$step.stepper >= $Stepper1$step.max }}" bindtap="$Stepper1$_handledjStepperPlus">+</view>
+  </view>
+
+    </view>
+
+    <!-- 当最大值等于最小值时，组件不可用 -->
+    <view style="padding: 40px 15px ">
+      
+  <view class="dj-stepper {{ $Stepper2$size === 'small' ? 'dj-stepper--small' : '' }} {{$Stepper2$className}}">
+    <view class="dj-stepper__minus {{ $Stepper2$step.stepper <= $Stepper2$step.min ? 'dj-stepper--disabled' : '' }}" data-component-id="{{ $Stepper2$componentId }}" data-stepper="{{ $Stepper2$step.stepper }}" data-disabled="{{ $Stepper2$step.stepper <= $Stepper2$step.min }}" bindtap="$Stepper2$_handledjStepperMinus">-</view>
+    <input class="dj-stepper__text {{ $Stepper2$step.min >= $Stepper2$step.max ? 'dj-stepper--disabled' : '' }}" type="number" data-component-id="{{ $Stepper2$componentId }}" data-min="{{ $Stepper2$step.min }}" data-max="{{ $Stepper2$step.max }}" value="{{ $Stepper2$step.stepper }}" disabled="{{ $Stepper2$step.min >= $Stepper2$step.max }}" bindblur="$Stepper2$_handledjStepperBlur"/>
+    <view class="dj-stepper__plus {{ $Stepper2$step.stepper >= $Stepper2$step.max ? 'dj-stepper--disabled' : '' }}" data-component-id="{{ $Stepper2$componentId }}" data-stepper="{{ $Stepper2$step.stepper }}" data-disabled="{{ $Stepper2$step.stepper >= $Stepper2$step.max }}" bindtap="$Stepper2$_handledjStepperPlus">+</view>
+  </view>
+
+    </view>
+
+    <!-- small size -->
+    <view style="padding: 40px 15px ">
+      
+  <view class="dj-stepper {{ $Stepper3$size === 'small' ? 'dj-stepper--small' : '' }} {{$Stepper3$className}}">
+    <view class="dj-stepper__minus {{ $Stepper3$step.stepper <= $Stepper3$step.min ? 'dj-stepper--disabled' : '' }}" data-component-id="{{ $Stepper3$componentId }}" data-stepper="{{ $Stepper3$step.stepper }}" data-disabled="{{ $Stepper3$step.stepper <= $Stepper3$step.min }}" bindtap="$Stepper3$_handledjStepperMinus">-</view>
+    <input class="dj-stepper__text {{ $Stepper3$step.min >= $Stepper3$step.max ? 'dj-stepper--disabled' : '' }}" type="number" data-component-id="{{ $Stepper3$componentId }}" data-min="{{ $Stepper3$step.min }}" data-max="{{ $Stepper3$step.max }}" value="{{ $Stepper3$step.stepper }}" disabled="{{ $Stepper3$step.min >= $Stepper3$step.max }}" bindblur="$Stepper3$_handledjStepperBlur"/>
+    <view class="dj-stepper__plus {{ $Stepper3$step.stepper >= $Stepper3$step.max ? 'dj-stepper--disabled' : '' }}" data-component-id="{{ $Stepper3$componentId }}" data-stepper="{{ $Stepper3$step.stepper }}" data-disabled="{{ $Stepper3$step.stepper >= $Stepper3$step.max }}" bindtap="$Stepper3$_handledjStepperPlus">+</view>
+  </view>
+
+    </view>
+  </view>

@@ -1,0 +1,9 @@
+@import "./../../components/wepy-steps/index.wxss";
+@import "./../../components/wepy-steps/index.wxss";
+@import "./../../components/wepy-steps/index.wxss";
+@import "./../../components/wepy-steps/index.wxss";
+@import "./../../components/wepy-steps/index.wxss";
+@import "./../../components/wepy-steps/index.wxss";
+@import "./../../components/wepy-steps/index.wxss";
+@import "./../../components/wepy-steps/index.wxss";
+.my-class{padding:10px}.my-class .dj-steps__step--done{color:#f44}

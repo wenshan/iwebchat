@@ -1,0 +1,104 @@
+/**
+ * Cell Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="css">
+.dj-cell {
+  position: relative;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.dj-cell::after {
+  position: absolute;
+  left: 15px;
+  right: 0;
+  bottom: 0;
+  border-top: 1rpx solid #e5e5e5;
+  background: #e5e5e5;
+  content: ' ';
+}
+.dj-cell__bd {
+  flex: 1;
+}
+.dj-cell__ft {
+  position: relative;
+  text-align: right;
+  color: #666;
+}
+.dj-cell--last-child::after,
+.dj-cell:last-child::after {
+  display: none;
+}
+</style>
+<template>
+  <view class="dj-cell {{className}}" @tap="handletap({{componentId}})">
+    <slot name="leftIcon" @tap.stop="handleLeftIcon({{componentId}})"></slot>
+    <view class="dj-cell__bd">{{cellbd}}<slot name="cellbd"></slot></view>
+    <view class="dj-cell__ft" @tap.stop="handleRightIcon({{componentId}})">{{cellft}}<slot name="cellft"></slot></view>
+  </view>
+</template>
+<script>
+    import wepy from 'wepy';
+    export default class Cell extends wepy.component {
+      props= {
+        componentId:{
+          default:''
+        },
+        cellbd:{
+          type: String,
+          default: ''
+        },
+        cellft:{
+          type: String,
+          default: ''
+        },
+        className: {
+          type: String,
+          default: 'default'
+        },
+        handleClick:{
+          type:Function,
+          default:function(v){return v}
+        },
+        handleLeft:{
+          type:Function,
+          default:function(v){return v}
+        },
+        handleRight:{
+          type:Function,
+          default:function(v){return v}
+        }
+      }
+      events = {
+      }
+      methods = {
+        handletap(id){
+          if(this.handleClick){
+            this.handleClick(id);
+          }
+        },
+        handleLeftIcon(id){
+          if(this.handleLeft){
+            this.handleLeft(id);
+          }
+        },
+
+        handleRightIcon(id){
+          if(this.handleRight){
+            this.handleRight(id);
+          }
+
+        }
+      }
+
+      onLoad() {
+      }
+    }
+</script>

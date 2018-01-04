@@ -1,0 +1,36 @@
+
+<view class="container">
+    <image class="logo" src="https://weixin.idongjia.cn/syui/scss/h5/fixed/icons/logoIcon.png"/>
+    <!-- 基础库 -->
+    <view class="dj-panel-title">{{ base.title }}</view>
+    <view class="dj-wepy-panel">
+    <block wx:for="{{base.content}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <navigator class="dj-cell dj-cell--access" url="{{ item.path }}">
+          <view class="dj-cell__bd">{{ item.name }}</view>
+          <view class="dj-cell__ft"/>
+    </navigator>
+    </block>
+    </view>
+    <!-- 表单 -->
+    <view class="dj-panel-title">{{ form.title }}</view>
+<view class="dj-wepy-panel">
+    <block wx:for="{{form.content}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <navigator class="dj-cell dj-cell--access" url="{{ item.path }}">
+    <view class="dj-cell__bd">{{ item.name }}</view>
+<view class="dj-cell__ft"/>
+    </navigator>
+    </block>
+    </view>
+
+    <!-- 操作反馈 -->
+    <view class="dj-panel-title">{{ action.title }}</view>
+<view class="dj-wepy-panel">
+    <block wx:for="{{action.content}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <navigator class="dj-cell dj-cell--access" url="{{ item.path }}">
+    <view class="dj-cell__bd">{{ item.name }}</view>
+<view class="dj-cell__ft"/>
+    </navigator>
+    </block>
+    </view>
+
+    </view>

@@ -1,0 +1,85 @@
+<template>
+    <view class="dj-cell dj-field {{ error ? 'dj-field--error' : '' }} {{ mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block wx:if="{{ field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ field.title }}</view>
+        </block>
+        <block wx:if="{{ field.type === 'textarea' }}">
+            <textarea
+                auto-height
+                name="{{ field.name }}"
+                value="{{ value }}"
+                placeholder="{{ field.placeholder }}"
+                class="dj-field__input dj-cell__bd {{ field.right ? 'dj-field__input--right' : '' }}"
+                placeholder-class="dj-field__placeholder"
+            @input="_handleFieldChange"
+            @focus="_handleFieldFocus"
+            @blur="_handleFieldBlur"
+            data-component-id="{{ field.componentId || '' }}"></textarea>
+        </block>
+        <block wx:else>
+            <input
+                type="{{ field.inputType || 'text' }}"
+                name="{{ field.name  || '' }}"
+                value="{{ value }}"
+                placeholder="{{ field.placeholder }}"
+                class="dj-field__input dj-cell__bd {{ field.right ? 'dj-field__input--right' : '' }}"
+                placeholder-class="dj-field__placeholder"
+            @input="_handleFieldChange"
+            @focus="_handleFieldFocus"
+            @blur="_handleFieldBlur"
+            data-component-id="{{ field.componentId || '' }}"/>
+        </block>
+    </view>
+</template>
+<script>
+    import wepy from 'wepy'
+    export default class Field extends wepy.component {
+        props = {
+            field:{
+                twoWay: true,
+                type:[Object],
+                default: {}
+            }
+        }
+
+        data = {
+            value: ''
+        }
+
+        events = {
+
+        }
+        methods = {
+
+          _handleFieldChange(event) {
+            this.field = Object.assign({}, this.field, { value: event.detail.value});
+            this.value = event.detail.value;
+            this.$emit('FildOnChange', this, event);
+          },
+
+          _handleFieldFocus(event) {
+            this.$emit('FildFocus', this, event);
+          },
+
+          _handleFieldBlur(event) {
+            this.$emit('FildBluer', this, event);
+          },
+
+          initSetValue(initData) {
+            let data = Object.assign({}, this.field, initData);
+            this.value = data.value;
+          },
+
+          clearInput () {
+            this.field = Object.assign({}, this.field, { value: ''});
+            this.value = '';
+            this.$emit('FildOnChange', this, event);
+            this.$apply();
+          }
+
+        }
+    }
+</script>
+<style>
+@import './index.wxss'
+</style>

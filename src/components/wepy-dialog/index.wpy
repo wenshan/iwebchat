@@ -1,0 +1,237 @@
+/**
+ * Dialog Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="less">
+/* 基础样式 */
+.dj-dialog--container {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  width: 80%;
+  height: 0;
+  font-size: 16px;
+  overflow: hidden;
+  transition: all .2s linear;
+  border-radius: 4px;
+  background-color: #fff;
+  transform: translate3d(-50%, -50%, 0);
+  color: #333;
+  opacity: 0;
+}
+
+.dj-dialog--mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: .3s;
+  display: none;
+}
+
+/* 弹出层内容 */
+.dj-dialog__header {
+  padding: 15px 0 0;
+  text-align: center;
+}
+
+.dj-dialog__content {
+  position: relative;
+  padding: 15px 20px;
+  line-height: 1.5;
+  min-height: 40px;
+
+  &::after {
+    border-bottom-width: 1px;
+  }
+}
+
+/* 在有标题时，需要减弱内容的存在感 */
+.dj-dialog__content--title {
+  color: #999;
+  font-size: 14px;
+}
+
+.dj-dialog__footer {
+  overflow: hidden;
+}
+
+.dj-dialog__button {
+  line-height: 50px;
+  height: 50px;
+  padding: 0 5px;
+  border-radius: 0;
+  margin-bottom: 0;
+
+  &::after {
+    border-width: 0;
+    border-radius: 0;
+  }
+}
+
+/* 展示时，样式重置 */
+.dj-dialog--show .dj-dialog--container {
+  opacity: 1;
+  height: auto;
+}
+
+.dj-dialog--show .dj-dialog--mask {
+  display: block;
+}
+
+/* 水平/垂直布局 */
+.dj-dialog__footer--horizon {
+  display: flex;
+}
+
+.dj-dialog__footer--horizon .dj-dialog__button {
+  flex: 1;
+
+  &::after {
+    border-right-width: 1px;
+  }
+
+  &:last-child::after {
+    border-right-width: 0;
+  }
+}
+
+
+.dj-dialog__footer--vertical .dj-dialog__button {
+  flex: 1;
+
+  &::after {
+    border-bottom-width: 1px;
+  }
+
+  &:last-child::after {
+    border-bottom-width: 0;
+  }
+}
+</style>
+<template>
+  <view class="dj-dialog {{ show ? 'dj-dialog--show' : '' }}">
+    <view class="dj-dialog--mask"></view>
+    <view class="dj-dialog--container">
+      <view
+        wx:if="{{ title }}"
+        class="dj-dialog__header">{{ title }}</view>
+      <view
+        class="dj-dialog__content {{ title ? 'dj-dialog__content--title' : '' }}">{{ content }}</view>
+      <view
+        class="dj-dialog__footer {{ buttonsShowVertical ? 'dj-dialog__footer--vertical' : 'dj-dialog__footer--horizon' }}">
+        <block wx:for="{{ buttons }}" wx:key="{{ item.text }}-{{ item.type }}">
+          <button
+            class="dj-dialog__button dj-btn"
+            data-type="{{ item.type }}"
+            @tap.stop="_handledjDialogButtonClick"
+            style="color: {{ item.color || '#333' }}">{{ item.text }}</button>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    export default class Dialog extends wepy.component {
+      data={
+          // 自定义 btn 列表
+          // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
+          buttons : [],
+          // 标题
+          title : '',
+          // 内容
+          content : ' ',
+          // 按钮是否展示为纵向
+          buttonsShowVertical : false,
+          // 是否展示确定
+          showConfirm : true,
+          // 确认按钮文案
+          confirmText : '确定',
+          // 确认按钮颜色
+          confirmColor : '#3CC51F',
+          // 是否展示取消
+          showCancel : false,
+          // 取消按钮文案
+          cancelText : '取消',
+          // 取消按钮颜色
+          cancelColor : '#333',
+          // 处理默认按钮的展示
+          // 纵向排布确认按钮在上方
+          showCustomBtns : false,
+          show:false
+      }
+      props={
+      }
+      events = {
+      }
+      methods = {
+        _handledjDialogButtonClick(e) {
+          const { currentTarget = {} } = e;
+          const { dataset = {} } = currentTarget;
+          const { resolve , reject } = this;
+          // 重置 djDialog 里的内容
+          this.show=false;
+          this.$apply();
+          // 自定义按钮，全部 resolve 形式返回，根据 type 区分点击按钮
+          if (this.showCustomBtns) {
+            resolve({type:dataset.type});
+            return;
+          }
+
+          // 默认按钮，确认为 resolve，取消为 reject
+          if (dataset.type === 'confirm') {
+            resolve({type: 'confirm'});
+          } else {
+            resolve({type: 'cancel'});
+          }
+        }
+      }
+      showDialog (data = {}) {
+        let t=this;
+            for (let k in data) {
+                t[k] = data[k];
+            }
+            t.$apply();
+            if (t.buttons.length === 0) {
+              if (t.showConfirm) {
+                t.buttons.push({
+                  type: 'confirm',
+                  text: t.confirmText,
+                  color: t.confirmColor
+                });
+              }
+
+              if (t.showCancel) {
+                const cancelButton = {
+                  type: 'cancel',
+                  text: t.cancelText,
+                  color: t.cancelColor
+                };
+                if (t.buttonsShowVertical) {
+                  t.buttons.push(cancelButton);
+                } else {
+                  t.buttons.unshift(cancelButton);
+                }
+              }
+            } else {
+              t.showCustomBtns = true;
+            }
+            t.show=true;
+            t.$apply();
+          return new Promise((resolve, reject) => {
+                t.resolve=resolve,
+                t.reject=reject
+          });
+
+        }
+      onLoad() {
+      }
+    }
+</script>

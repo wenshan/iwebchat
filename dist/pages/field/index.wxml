@@ -1,0 +1,150 @@
+
+<view class="container">
+    <view class="doc-title">Field</view>
+    <!-- Field 基础用法 -->
+    <view class="dj-panel-title">基础用法</view>
+    <view class="dj-panel">
+        
+    <view class="dj-cell dj-field {{ $Field1$error ? 'dj-field--error' : '' }} {{ $Field1$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field1$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field1$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field1$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field1$field.name }}" value="{{ $Field1$value }}" placeholder="{{ $Field1$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field1$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field1$_handleFieldChange" bindfocus="$Field1$_handleFieldFocus" bindblur="$Field1$_handleFieldBlur" data-component-id="{{ $Field1$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field1$field.inputType || 'text' }}" name="{{ $Field1$field.name  || '' }}" value="{{ $Field1$value }}" placeholder="{{ $Field1$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field1$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field1$_handleFieldChange" bindfocus="$Field1$_handleFieldFocus" bindblur="$Field1$_handleFieldBlur" data-component-id="{{ $Field1$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+        
+    <view class="dj-cell dj-field {{ $Field2$error ? 'dj-field--error' : '' }} {{ $Field2$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field2$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field2$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field2$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field2$field.name }}" value="{{ $Field2$value }}" placeholder="{{ $Field2$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field2$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field2$_handleFieldChange" bindfocus="$Field2$_handleFieldFocus" bindblur="$Field2$_handleFieldBlur" data-component-id="{{ $Field2$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field2$field.inputType || 'text' }}" name="{{ $Field2$field.name  || '' }}" value="{{ $Field2$value }}" placeholder="{{ $Field2$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field2$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field2$_handleFieldChange" bindfocus="$Field2$_handleFieldFocus" bindblur="$Field2$_handleFieldBlur" data-component-id="{{ $Field2$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+        
+    <view class="dj-cell dj-field {{ $Field3$error ? 'dj-field--error' : '' }} {{ $Field3$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field3$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field3$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field3$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field3$field.name }}" value="{{ $Field3$value }}" placeholder="{{ $Field3$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field3$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field3$_handleFieldChange" bindfocus="$Field3$_handleFieldFocus" bindblur="$Field3$_handleFieldBlur" data-component-id="{{ $Field3$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field3$field.inputType || 'text' }}" name="{{ $Field3$field.name  || '' }}" value="{{ $Field3$value }}" placeholder="{{ $Field3$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field3$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field3$_handleFieldChange" bindfocus="$Field3$_handleFieldFocus" bindblur="$Field3$_handleFieldBlur" data-component-id="{{ $Field3$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+    </view>
+    <view class="dj-btns">
+        <button class="dj-btn dj-btn--primary" bindtap="clearInput">清除输入</button>
+    </view>
+
+    <!-- 去除标题后的输入框样式 -->
+    <view class="dj-panel-title">无标题输入框</view>
+    <view class="dj-panel">
+        
+    <view class="dj-cell dj-field {{ $Field4$error ? 'dj-field--error' : '' }} {{ $Field4$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field4$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field4$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field4$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field4$field.name }}" value="{{ $Field4$value }}" placeholder="{{ $Field4$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field4$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field4$_handleFieldChange" bindfocus="$Field4$_handleFieldFocus" bindblur="$Field4$_handleFieldBlur" data-component-id="{{ $Field4$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field4$field.inputType || 'text' }}" name="{{ $Field4$field.name  || '' }}" value="{{ $Field4$value }}" placeholder="{{ $Field4$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field4$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field4$_handleFieldChange" bindfocus="$Field4$_handleFieldFocus" bindblur="$Field4$_handleFieldBlur" data-component-id="{{ $Field4$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+    </view>
+
+    <view class="dj-btns">
+        <button class="dj-btn dj-btn--primary" bindtap="clearTextarea">清除输入</button>
+    </view>
+
+    <!-- 使用 Field 圆角样式 -->
+    <view class="dj-panel-title field__title--radius">圆角输入框</view>
+    
+    <view class="dj-cell dj-field {{ $Field5$error ? 'dj-field--error' : '' }} {{ $Field5$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field5$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field5$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field5$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field5$field.name }}" value="{{ $Field5$value }}" placeholder="{{ $Field5$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field5$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field5$_handleFieldChange" bindfocus="$Field5$_handleFieldFocus" bindblur="$Field5$_handleFieldBlur" data-component-id="{{ $Field5$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field5$field.inputType || 'text' }}" name="{{ $Field5$field.name  || '' }}" value="{{ $Field5$value }}" placeholder="{{ $Field5$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field5$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field5$_handleFieldChange" bindfocus="$Field5$_handleFieldFocus" bindblur="$Field5$_handleFieldBlur" data-component-id="{{ $Field5$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+    
+    <view class="dj-cell dj-field {{ $Field6$error ? 'dj-field--error' : '' }} {{ $Field6$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field6$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field6$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field6$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field6$field.name }}" value="{{ $Field6$value }}" placeholder="{{ $Field6$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field6$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field6$_handleFieldChange" bindfocus="$Field6$_handleFieldFocus" bindblur="$Field6$_handleFieldBlur" data-component-id="{{ $Field6$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field6$field.inputType || 'text' }}" name="{{ $Field6$field.name  || '' }}" value="{{ $Field6$value }}" placeholder="{{ $Field6$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field6$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field6$_handleFieldChange" bindfocus="$Field6$_handleFieldFocus" bindblur="$Field6$_handleFieldBlur" data-component-id="{{ $Field6$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+    
+    <view class="dj-cell dj-field {{ $Field7$error ? 'dj-field--error' : '' }} {{ $Field7$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field7$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field7$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field7$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field7$field.name }}" value="{{ $Field7$value }}" placeholder="{{ $Field7$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field7$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field7$_handleFieldChange" bindfocus="$Field7$_handleFieldFocus" bindblur="$Field7$_handleFieldBlur" data-component-id="{{ $Field7$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field7$field.inputType || 'text' }}" name="{{ $Field7$field.name  || '' }}" value="{{ $Field7$value }}" placeholder="{{ $Field7$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field7$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field7$_handleFieldChange" bindfocus="$Field7$_handleFieldFocus" bindblur="$Field7$_handleFieldBlur" data-component-id="{{ $Field7$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+    <!-- form 中使用 Field -->
+    <view class="dj-panel-title">Form 表单中的field应用</view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="dj-panel">
+            
+    <view class="dj-cell dj-field {{ $Field8$error ? 'dj-field--error' : '' }} {{ $Field8$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field8$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field8$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field8$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field8$field.name }}" value="{{ $Field8$value }}" placeholder="{{ $Field8$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field8$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field8$_handleFieldChange" bindfocus="$Field8$_handleFieldFocus" bindblur="$Field8$_handleFieldBlur" data-component-id="{{ $Field8$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field8$field.inputType || 'text' }}" name="{{ $Field8$field.name  || '' }}" value="{{ $Field8$value }}" placeholder="{{ $Field8$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field8$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field8$_handleFieldChange" bindfocus="$Field8$_handleFieldFocus" bindblur="$Field8$_handleFieldBlur" data-component-id="{{ $Field8$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+            
+    <view class="dj-cell dj-field {{ $Field9$error ? 'dj-field--error' : '' }} {{ $Field9$mode === 'wrapped' ? 'dj-field--wrapped' : '' }}">
+        <block  wx:if="{{ $Field9$field.title }}">
+            <view class="dj-cell__hd dj-field__title">{{ $Field9$field.title }}</view>
+        </block>
+        <block  wx:if="{{ $Field9$field.type === 'textarea' }}">
+            <textarea auto-height name="{{ $Field9$field.name }}" value="{{ $Field9$value }}" placeholder="{{ $Field9$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field9$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field9$_handleFieldChange" bindfocus="$Field9$_handleFieldFocus" bindblur="$Field9$_handleFieldBlur" data-component-id="{{ $Field9$field.componentId || '' }}"/>
+        </block>
+        <block wx:else>
+            <input type="{{ $Field9$field.inputType || 'text' }}" name="{{ $Field9$field.name  || '' }}" value="{{ $Field9$value }}" placeholder="{{ $Field9$field.placeholder }}" class="dj-field__input dj-cell__bd {{ $Field9$field.right ? 'dj-field__input--right' : '' }}" placeholder-class="dj-field__placeholder" bindinput="$Field9$_handleFieldChange" bindfocus="$Field9$_handleFieldFocus" bindblur="$Field9$_handleFieldBlur" data-component-id="{{ $Field9$field.componentId || '' }}"/>
+        </block>
+    </view>
+
+            <view class="dj-btns">
+                <button class="dj-btn dj-btn--primary" formType="submit">提交数据</button>
+                <button class="dj-btn" formType="reset">重置数据</button>
+            </view>
+        </view>
+    </form>
+</view>

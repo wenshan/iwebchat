@@ -1,0 +1,151 @@
+<style lang="less">
+</style>
+<template>
+<view class="container">
+
+  <view class="doc-title">TAB</view>
+
+  <view style="margin: 20px 0">
+    <Tab1
+        :tab.sync="tab1"
+        componentId='tab1'
+        :handleTabChange="handleTabChange"
+      ></Tab1>
+  </view>
+  <view style="margin: 20px 0">
+    <Tab2
+      componentId='tab2'
+      :tab.sync="tab2"
+      :handleTabChange="handleTabChange"
+      ></Tab2>
+  </view>
+  <view style="margin: 20px 0">
+    <Tab2
+      componentId='tab3'
+      :tab.sync="tab3"
+      :handleTabChange="handleTabChange"
+      ></Tab2>
+  </view>
+</view>
+
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Tab1 from '@/components/wepy-tab/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Tab extends wepy.page {
+    constructor(){
+      super();
+      this.handleTabChange=this.handleTabChange.bind(this);
+    }
+    config = {
+      navigationBarTitleText: "Tab 标签"
+    }
+    components = {
+      Tab1: Tab1,
+      Tab2: Tab1,
+      Tab3: Tab1
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      tab1: {
+        list: [{
+          id: 'all',
+          title: '全部'
+        }, {
+          id: 'topay',
+          title: '待付款'
+        }, {
+          id: 'tosend',
+          title: '待发货'
+        }, {
+          id: 'send',
+          title: '待收货'
+        }, {
+          id: 'sign',
+          title: '已完成订单'
+        }],
+        selectedId: 'all'
+      },
+      tab2: {
+        list: [{
+          id: '1',
+          title: '最新商品1'
+        }, {
+          id: '2',
+          title: '最新商品2'
+        }, {
+          id: '3',
+          title: '最新商品3'
+        }, {
+          id: '4',
+          title: '最新商品4'
+        }, {
+          id: '5',
+          title: '最新商品5'
+        }, {
+          id: '6',
+          title: '最新商品6'
+        }],
+        selectedId: '1',
+        scroll: true,
+        height: 45
+      },
+      tab3: {
+        list: [{
+          id: '1',
+          title: '商品1'
+        }, {
+          id: '2',
+          title: '商品2'
+        }, {
+          id: '3',
+          title: '商品3'
+        }, {
+          id: '4',
+          title: '商品4'
+        }, {
+          id: '5',
+          title: '商品5'
+        }, {
+          id: '6',
+          title: '商品6'
+        }],
+        selectedId: '1',
+        scroll: true,
+        height: 45
+      }
+    }
+
+    computed = {
+
+    }
+
+    methods = {
+    }
+    handleTabChange(e) {
+      var componentId = e.componentId;
+      var selectedId = e.selectedId;
+      this[componentId].selectedId= selectedId;
+      this.$apply();
+    }
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

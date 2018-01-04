@@ -1,0 +1,68 @@
+/**
+ * Select Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="css">
+.dj-select__list .dj-select__radio{
+  display: none;
+}
+</style>
+<template>
+  <radio-group class="dj-select__list" @change="_handleSelectChange({{componentId}})">
+    <label wx:for="{{ items }}" wx:key="value">
+      <view class="dj-cell">
+        <radio class="dj-select__radio" value="{{ item.value }}" checked="{{ item.value == checkedValue }}"/>
+        <view
+          class="dj-cell__bd"
+          style="{{'padding-left: ' + item.padding + 'px;'}}{{item.value === checkedValue?('color: '+(activeColor||'#ff4444')):''}}"
+        >{{ item.name }}</view>
+        <view wx:if="{{ item.value == checkedValue }}" class="dj-cell__ft">
+          <icon type="success_no_circle" color="{{ activeColor?activeColor:'#ff4444'}}" size="14"></icon>
+        </view>
+      </view>
+    </label>
+  </radio-group>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    export default class Select extends wepy.component {
+      props={
+        componentId:{
+          default:''
+        },
+        items:{
+          type:Array,
+          default:[]
+        },
+        checkedValue:{
+          type:[String,Number],
+          default:''
+        },
+        activeColor:{
+          type:[String,Number],
+          default:''
+        },
+        handleSelectChange:{
+          type:Function,
+          default:function(v){return v}
+        }
+      }
+      events = {
+      }
+      methods = {
+          _handleSelectChange(componentId,e) {
+            var componentId = componentId;
+            var value = e.detail.value;
+            if(this.handleSelectChange){
+              this.handleSelectChange({componentId, value});
+            }
+          }
+        }
+      onLoad() {
+      }
+    }
+</script>

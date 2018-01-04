@@ -1,0 +1,65 @@
+<style lang="less">
+    .row{
+      display:flex;
+      flex-direction: row;
+      width:100%;
+
+      &-wrap{
+        flex-wrap: wrap;
+      }
+
+      &-nowrap{
+        flex-wrap: nowrap;
+      }
+
+      &-top{
+        align-items: flex-start;
+      }
+      &-center{
+        align-items: center;
+      }
+      &-bottom{
+        align-items: flex-end;
+      }
+      &-justify-center{
+        justify-content: center;
+      }
+      &-justify-stretch{
+        justify-content: stretch;
+      }
+      &-justify-between{
+        justify-content: space-between;
+      }
+      &-justify-around{
+        justify-content: space-around;
+      }
+    }
+</style>
+
+<template>
+    <view class="row {{ align }} row-justify-{{ justify }} {{ className }}">
+      <slot></slot>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+
+    export default class extends wepy.component {
+
+        props = {
+          className: {
+            type: String,
+            default: ''
+          },
+          align: {
+            type: String
+          },
+          justify: {
+            type: String,
+            default: 'start'
+          },
+        }
+
+    }
+</script>

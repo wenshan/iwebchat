@@ -1,0 +1,25 @@
+
+  <view class="container">
+      <view class="doc-title">Toast</view>
+      <!-- Field 基础用法 -->
+      <view class="dj-panel-title">基础用法</view>
+
+      <view class="dj-btns">
+        <button bindtap="toast" type="primary" size="mini">Toast 轻提示</button>
+        
+    <view class="dj-wetoast {{$Toast$reveal ? 'dj-wetoast_show' : ''}}">
+        <view class="dj-wetoast__mask"/>
+        <view class="dj-wetoast__bd" animation="{{$Toast$animationData}}">
+            <block  wx:if="{{$Toast$img}}">
+                <view class="dj-wetoast__bd__img {{$Toast$imgClassName || ''}}">
+                    <image class="dj-wetoast__bd__img_desc" src="{{$Toast$img}}" mode="{{$Toast$imgMode || 'scaleToFill'}}"/>
+                </view>
+            </block>
+            <block  wx:if="{{$Toast$title}}">
+                <view class="dj-wetoast__bd__title {{$Toast$titleClassName || ''}}">{{$Toast$title}}</view>
+            </block>
+        </view>
+    </view>
+
+      </view>
+    </view>

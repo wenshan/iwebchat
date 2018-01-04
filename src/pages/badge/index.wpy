@@ -1,0 +1,97 @@
+<style lang="less">
+.demo {
+  padding: 40px 0;
+  display: flex;
+}
+.demo__item {
+  flex: 1;
+}
+.demo__icon {
+  margin: 0 auto;
+  width: 48px;
+  height: 48px;
+  background: #ddd;
+  border-radius: 4px;
+}
+</style>
+<template>
+  <view class="container">
+
+    <view class="doc-title">BADGE</view>
+
+    <view class="demo">
+
+      <view class="demo__item">
+        <badge1
+        className="demo__icon"
+        >
+      </badge1>
+      </view>
+      <view class="demo__item">
+        <badge2
+        className="demo__icon"
+        countText="9"
+        >
+      </badge2>
+      </view>
+      <view class="demo__item">
+        <badge3
+        className="demo__icon"
+        countText="19"
+        >
+      </badge3>
+      </view>
+      <view class="demo__item">
+        <badge4
+        className="demo__icon"
+        countText="99+"
+        >
+      </badge4>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Badge1 from '@/components/wepy-badge/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Badge extends wepy.page {
+    config = {
+      navigationBarTitleText: "Badge 徽章"
+    }
+    components = {
+      badge1: Badge1,
+      badge2: Badge1,
+      badge3: Badge1,
+      badge4: Badge1,
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

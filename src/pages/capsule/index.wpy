@@ -1,0 +1,78 @@
+<style lang="less">
+</style>
+<template>
+  <view class="container">
+
+    <view class="doc-title">CAPSULE</view>
+
+    <view class="dj-panel-title">基本用法</view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <capsule1
+        leftText="1折"
+        rightText="限购一份">
+      </capsule1>
+        <capsule2
+        leftText="1折"
+        rightText="限购一份"
+         :type.sync="danger">
+       </capsule2>
+      </view>
+    </view>
+
+    <view class="dj-panel-title">自定义颜色</view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        <capsule3
+        leftText="1折"
+        rightText="限购一份"
+         color="#38f">
+       </capsule3>
+      </view>
+    </view>
+
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Capsule1 from '@/components/wepy-capsule/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Capsule extends wepy.page {
+    config = {
+      navigationBarTitleText: "Capsule 胶囊"
+    }
+    components = {
+      capsule1: Capsule1,
+      capsule2: Capsule1,
+      capsule3: Capsule1,
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

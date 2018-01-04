@@ -1,0 +1,140 @@
+<style lang="less">
+</style>
+<template>
+<view class="container">
+
+  <view class="doc-title">BUTTON</view>
+
+  <view class="dj-panel-title">普通按钮</view>
+  <view class="dj-panel">
+    <view class="dj-btns">
+      <btn1>取消订单</btn1>
+
+      <btn2 type="primary">确认付款</btn2>
+      <btn3 type="danger">确认付款</btn3>
+      <btn4 type="warn">确认付款</btn4>
+    </view>
+  </view>
+
+  <view class="dj-panel-title">大号按钮，没有边框线及圆角</view>
+  <view class="dj-panel">
+    <btn5
+    type="primary"
+    size="large"
+    >确认付款
+  </btn5>
+    <btn6
+    type="warn"
+    size="large">
+    立即购买
+  </btn6>
+    <btn7
+    type="danger"
+    size="large">
+    立即购买
+  </btn7>
+  </view>
+
+  <view class="dj-panel-title">小号按钮</view>
+  <view class="dj-panel" style="padding: 15px;">
+    <btn8
+    size="small">
+    取消订单
+  </btn8>
+    <btn9
+    type="primary"
+    size="small">
+    确认付款
+  </btn9>
+  </view>
+
+  <view class="dj-panel-title">迷你按钮</view>
+  <view class="dj-panel" style="padding: 15px;">
+  <btn10
+  type="primary"
+  size="mini">
+  确认付款
+</btn10>
+  </view>
+
+  <view class="dj-panel-title">Loading</view>
+  <view class="dj-panel">
+    <view class="dj-btns">
+    <btn11
+    :loading="loading"
+    type="primary"
+    size="mini">
+    确认付款
+  </btn11>
+    </view>
+  </view>
+
+  <view class="dj-panel-title">Disabled</view>
+  <view class="dj-panel">
+    <view class="dj-btns">
+    <btn12
+      :disabled.sync="disabled"
+      type="primary"
+      size="mini">
+      确认付款
+    </btn12>
+    </view>
+  </view>
+
+</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Btn1 from '@/components/wepy-button/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Btn extends wepy.page {
+    config = {
+      navigationBarTitleText: "Button 按钮"
+    }
+    components = {
+      btn1: Btn1,
+      btn2: Btn1,
+      btn3: Btn1,
+      btn4: Btn1,
+      btn5: Btn1,
+      btn6: Btn1,
+      btn7: Btn1,
+      btn8: Btn1,
+      btn9: Btn1,
+      btn10: Btn1,
+      btn11: Btn1,
+      btn12: Btn1
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      loading:true,
+      disabled:true
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+
+    events = {
+    }
+
+    onLoad() {
+      console.log(this)
+    }
+  }
+</script>

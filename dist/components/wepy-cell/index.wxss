@@ -1,0 +1,31 @@
+
+.dj-cell {
+  position: relative;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.dj-cell::after {
+  position: absolute;
+  left: 15px;
+  right: 0;
+  bottom: 0;
+  border-top: 1rpx solid #e5e5e5;
+  background: #e5e5e5;
+  content: ' ';
+}
+.dj-cell__bd {
+  flex: 1;
+}
+.dj-cell__ft {
+  position: relative;
+  text-align: right;
+  color: #666;
+}
+.dj-cell--last-child::after,
+.dj-cell:last-child::after {
+  display: none;
+}

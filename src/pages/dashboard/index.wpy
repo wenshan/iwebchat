@@ -1,0 +1,159 @@
+<style lang="less">
+  .logo {
+    display: block;
+    margin: 40px auto;
+    width: 92px;
+    height: 82px;
+}
+    .dj-panel{
+    width:100%
+}
+</style>
+<template>
+<view class="container">
+    <image class="logo" src="https://weixin.idongjia.cn/syui/scss/h5/fixed/icons/logoIcon.png"></image>
+    <!-- 基础库 -->
+    <view class="dj-panel-title">{{ base.title }}</view>
+    <view class="dj-wepy-panel">
+    <repeat for="{{base.content}}" key="index" index="index" item="item">
+        <navigator  class="dj-cell dj-cell--access" url="{{ item.path }}">
+          <view class="dj-cell__bd">{{ item.name }}</view>
+          <view class="dj-cell__ft"></view>
+    </navigator>
+    </repeat>
+    </view>
+    <!-- 表单 -->
+    <view class="dj-panel-title">{{ form.title }}</view>
+<view class="dj-wepy-panel">
+    <repeat for="{{form.content}}" key="index" index="index" item="item">
+    <navigator  class="dj-cell dj-cell--access" url="{{ item.path }}">
+    <view class="dj-cell__bd">{{ item.name }}</view>
+<view class="dj-cell__ft"></view>
+    </navigator>
+    </repeat>
+    </view>
+
+    <!-- 操作反馈 -->
+    <view class="dj-panel-title">{{ action.title }}</view>
+<view class="dj-wepy-panel">
+    <repeat for="{{action.content}}" key="index" index="index" item="item">
+    <navigator  class="dj-cell dj-cell--access" url="{{ item.path }}">
+    <view class="dj-cell__bd">{{ item.name }}</view>
+<view class="dj-cell__ft"></view>
+    </navigator>
+    </repeat>
+    </view>
+
+    </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Style from '@/components/wepy-style/index'
+  import componentsConfig from './config';
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '小程序基础组件UI库'
+    }
+    components = {
+    }
+    data = {
+        base: {
+            title: '基础组件',
+            content: [
+                {
+                    name: 'Badge 徽章',
+                    path: '/pages/badge/index'
+                }, {
+                    name: 'Button 按钮',
+                    path: '/pages/btn/index'
+                }, {
+                    name: 'Capsule 胶囊',
+                    path: '/pages/capsule/index'
+                }, {
+                    name: 'Card 卡片',
+                    path: '/pages/card/index'
+                }, {
+                    name: 'Cell 单元格',
+                    path: '/pages/cell/index'
+                }, {
+                    name: 'Helper 基础样式',
+                    path: '/pages/helper/index'
+                }, {
+                    name: 'Icon 图标',
+                    path: '/pages/icon/index'
+                }, {
+                    name: 'Layout 布局',
+                    path: '/pages/layout/index'
+                }, {
+                    name: 'Loadmore 加载',
+                    path: '/pages/loadmore/index'
+                }, {
+                    name: 'Noticebar 通告栏',
+                    path: '/pages/noticebar/index'
+                }, {
+                    name: 'Panel 面板',
+                    path: '/pages/wepy-panel/index'
+                }, {
+                    name: 'Popup 弹出层',
+                    path: '/pages/popup/index'
+                }, {
+                    name: 'Select 选择',
+                    path: '/pages/select/index'
+                }, {
+                    name: 'Stepper 计数器',
+                    path: '/pages/stepper/index'
+                }, {
+                    name: 'Steps 步骤条',
+                    path: '/pages/steps/index'
+                }, {
+                    name: 'Switch 开关',
+                    path: '/pages/switch/index'
+                }, {
+                    name: 'Tab 标签',
+                    path: '/pages/tab/index'
+                }, {
+                    name: 'Tag 标记',
+                    path: '/pages/tag/index'
+                }
+            ]
+        },
+        form: {
+            title: '表单',
+            content: [
+                {
+                    name: 'Field 输入框',
+                    path: '/pages/field/index'
+                }
+            ]
+        },
+        action: {
+            title: '操作反馈',
+            content: [
+                {
+                    name: 'Dialog 弹出框',
+                    path: '/pages/dialog/index'
+                }, {
+                    name: 'Toast 轻提示',
+                    path: '/pages/toast/index'
+                }, {
+                    name: 'Toptips 顶部提示',
+                    path: '/pages/toptips/index'
+                }
+            ]
+        }
+    }
+
+    methods = {
+
+    }
+
+    events = {
+
+    }
+
+    onLoad() {
+
+    }
+  }
+</script>

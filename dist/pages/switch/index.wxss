@@ -1,0 +1,5 @@
+@import "./../../components/wepy-switch/index.wxss";
+@import "./../../components/wepy-switch/index.wxss";
+@import "./../../components/wepy-switch/index.wxss";
+@import "./../../components/wepy-switch/index.wxss";
+.dj-panel{padding:10px}.dj-switch{margin-right:8px}

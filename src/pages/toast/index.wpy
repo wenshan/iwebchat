@@ -1,0 +1,46 @@
+<template>
+  <view class="container">
+      <view class="doc-title">Toast</view>
+      <!-- Field 基础用法 -->
+      <view class="dj-panel-title">基础用法</view>
+
+      <view class="dj-btns">
+        <button @tap="toast" type="primary" size="mini">Toast 轻提示</button>
+        <Toast />
+      </view>
+    </view>
+</template>
+<script>
+    import wepy from 'wepy'
+    import Toast from '@/components/wepy-toast/index'
+
+export default class ToastEx extends wepy.page {
+    config = {
+        navigationBarTitleText: 'Toast 轻提示'
+    }
+    components = {
+        Toast: Toast
+    }
+
+    data = {}
+
+    methods = {
+        toast () {
+            let pages = getCurrentPages();
+
+            let promise = this.$invoke('Toast', 'show', {
+                title: '自定义标题',
+                img: 'https://raw.githubusercontent.com/kiinlam/wetoast/master/images/star.png'
+            })
+
+            promise.then((d) => {
+            console.log('wepy-toast done')
+            })
+        }
+    }
+
+    events = {
+
+    }
+}
+</script>

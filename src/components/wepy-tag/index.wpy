@@ -1,0 +1,113 @@
+/**
+ * Tag Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="less">
+.dj-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 16px;
+  padding: 0 5px;
+  border-radius: 2px;
+  font-size: 11px;
+  background: #c9c9c9;
+  border: 1rpx solid #e5e5e5;
+  text-align: center;
+  color: #fff;
+}
+
+.dj-tag--plain {
+  color: #c9c9c9;
+  background: #fff;
+}
+
+/* 各种主题代码 */
+.dj-tag--primary {
+  color: #fff;
+  background-color: #4b0;
+  border: 1rpx solid #4b0;
+  &.dj-tag--plain {
+    color: #4b0;
+    background: #fff;
+  }
+  /* 空心形式 */
+}
+.dj-tag--danger {
+  color: #fff;
+  background: #f44;
+  border: 1rpx solid #f44;
+
+  /* 空心形式 */
+  &.dj-tag--plain {
+    color: #f44;
+    background: #fff;
+  }
+}
+.dj-tag--warn {
+  color: #fff;
+  background: #f85;
+  border: 1rpx solid #f85;
+
+  /* 空心形式 */
+  &.dj-tag--plain {
+    color: #f85;
+    background: #fff;
+  }
+}
+
+
+/* disabled tag */
+.dj-tag--disabled {
+  color: #cacaca !important;
+  background: #eee;
+  border: 1rpx solid #e5e5e5;
+}
+
+</style>
+<template>
+    <view
+        class="dj-tag {{type?('dj-tag--'+type):''}} {{size?('dj-tag--'+size):''}} {{disabled?('dj-tag--disabled'):''}} {{className}}"
+        @tap="handletap({{componentId}})">
+        <slot></slot>
+    </view>
+</template>
+<script>
+    import wepy from 'wepy';
+    export default class Tag extends wepy.component {
+      props={
+        componentId:{
+          default:null
+        },
+        className: {
+          type: String,
+          default: 'default'
+        },
+      type: {
+        type: String,
+        default: 'default'
+      },
+      size: String,
+      disabled:{
+        type:Boolean,
+        default:false
+      },
+      handleClick:{
+        type:Function,
+        default:function(v){return v}
+      }
+    }
+      events = {
+      }
+      methods = {
+        handletap(id){
+          this.handleClick(id);
+        }
+      }
+
+      onLoad() {
+      }
+    }
+</script>

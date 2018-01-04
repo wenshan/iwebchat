@@ -1,0 +1,45 @@
+<template name="dj-loadmore">
+    <block wx:if="{{nomore}}">
+        <view class="dj-loadmore dj-loadmore--nomore">
+            <view class="dj-loadmore__tips">
+                <view class="dj-loadmore__dot"></view>
+            </view>
+        </view>
+    </block>
+
+    <block wx:elif="{{nodata}}">
+        <view class="dj-loadmore dj-loadmore--nodata">
+            <view class="dj-loadmore__tips">{{ nodata_str || '暂无数据' }}</view>
+        </view>
+    </block>
+
+    <block wx:elif="{{loading}}">
+        <view class="dj-loadmore">
+            <view class="dj-loading"></view>
+            <view class="dj-loadmore__tips">加载中...</view>
+        </view>
+    </block>
+
+</template>
+<style>
+@import './index.wxss'
+</style>
+<script>
+import wepy from 'wepy'
+export default class Loadmore extends wepy.component {
+    props = {
+        nomore: {
+            type:Boolean,
+            default: false
+        },
+        nodata: {
+            type:Boolean,
+            default: false
+        },
+        loading: {
+            type:Boolean,
+            default: false
+        }
+    };
+}
+</script>

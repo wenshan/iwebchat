@@ -1,0 +1,32 @@
+<template>
+    <view class="container">
+
+        <view class="doc-title">PANEL</view>
+
+        <view class="dj-panel-title">标题</view>
+        <view class="dj-panel">
+            <view style="padding: 15px;">内容</view>
+        </view>
+
+        <view class="dj-panel">
+            <view style="padding: 15px;">内容</view>
+        </view>
+
+        <view class="dj-panel">
+            <view style="padding: 15px;">内容</view>
+        </view>
+
+    </view>
+
+</template>
+<script>
+import wepy from 'wepy'
+import Panel from '@/components/wepy-panel/index'
+
+export default class PanelEx extends wepy.page {
+    config = {
+        navigationBarTitleText: 'Panel 面板'
+    }
+}
+
+</script>

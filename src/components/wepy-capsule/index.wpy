@@ -1,0 +1,105 @@
+/**
+ * Capsule Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="css">
+.dj-capsule {
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: middle;
+  line-height: 19px;
+  transform: scale(0.83);
+}
+.dj-capsule__left,
+.dj-capsule__right {
+  display: inline-block;
+  line-height: 17px;
+  height: 19px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.dj-capsule__left {
+  padding: 0 2px;
+  color: #FFF;
+  background: #999;
+  border-radius: 2px 0 0 2px;
+  border: 1rpx solid #999;
+}
+.dj-capsule__right {
+  padding: 0 5px;
+  color: #999;
+  border-radius: 0 2px 2px 0;
+  border: 1rpx solid #999;
+}
+
+.dj-capsule--danger .dj-capsule__left {
+  color: #FFF;
+  background: #F24544;
+  border-color: #F24544;
+}
+
+.dj-capsule--danger .dj-capsule__right {
+  color: #F24544;
+  border-color: #F24544;
+}
+</style>
+<template>
+    <view class="dj-capsule dj-capsule--{{type}}  {{className}}" @tap="handletap({{componentId}})">
+      <block wx:if="{{color}}">
+        <view class="dj-capsule__left" style="background: {{ color }}; border-color: {{ color }}">{{ leftText }}</view>
+        <view class="dj-capsule__right" style="color: {{ color }}; border-color: {{ color }}">{{ rightText }}</view>
+      </block>
+      <block wx:else>
+        <view class="dj-capsule__left">{{ leftText }}</view>
+        <view class="dj-capsule__right">{{ rightText }}</view>
+      </block>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    export default class Capsule extends wepy.component {
+      props={
+        componentId:{
+          default:''
+        },
+        className: {
+          type: String,
+          default: 'default'
+        },
+        type: {
+          type: String,
+          default: 'default'
+        },
+        color: {
+          type: String,
+          default: ''
+        },
+        leftText:{
+          type:[String,Number],
+          default:''
+        },
+        rightText:{
+          type:[String,Number],
+          default:''
+        },
+        handleClick:{
+          type:Function,
+          default:function(v){return v}
+        }
+      }
+      events = {
+      }
+      methods = {
+        handletap(id){
+          this.handleClick(id);
+        }
+      }
+
+      onLoad() {
+      }
+    }
+</script>

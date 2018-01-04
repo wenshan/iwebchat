@@ -1,0 +1,133 @@
+
+  <view class="container">
+
+    <view class="doc-title">STEPS</view>
+
+    <view class="dj-panel">
+      <view class="dj-cell">
+        <view class="dj-cell__bd">
+          
+  <view class="dj-steps dj-steps--{{ $Steps1$type == 'vertical' ? 'vsteps' : 'steps' }} dj-steps--{{ $Steps1$steps.length }} {{ $Steps1$className }}">
+    <view  wx:for="{{ $Steps1$steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index" class="dj-steps__step {{ $Steps1$hasDesc ? 'dj-steps__step--db-title' : '' }} {{ index == 0 ? 'dj-steps__step--first-child' : '' }} {{ index == $Steps1$steps.length - 1 ? 'dj-steps__step--last-child' : '' }} {{ step.done ? 'dj-steps__step--done' : '' }} {{ step.current ? 'dj-steps__step--cur' : '' }}">
+      <view class="dj-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ $Steps1$hasDesc && step.desc }}" class="dj-steps__title dj-steps__title--desc">{{ step.desc }}</view>
+      <view class="dj-steps__icons">
+        <view class="dj-steps__circle"/>
+      </view>
+      <view class="dj-steps__line"/>
+    </view>
+  </view>
+
+        </view>
+      </view>
+
+      <view class="dj-cell">
+        <view class="dj-cell__bd">
+          
+  <view class="dj-steps dj-steps--{{ $Steps2$type == 'vertical' ? 'vsteps' : 'steps' }} dj-steps--{{ $Steps2$steps.length }} {{ $Steps2$className }}">
+    <view  wx:for="{{ $Steps2$steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index" class="dj-steps__step {{ $Steps2$hasDesc ? 'dj-steps__step--db-title' : '' }} {{ index == 0 ? 'dj-steps__step--first-child' : '' }} {{ index == $Steps2$steps.length - 1 ? 'dj-steps__step--last-child' : '' }} {{ step.done ? 'dj-steps__step--done' : '' }} {{ step.current ? 'dj-steps__step--cur' : '' }}">
+      <view class="dj-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ $Steps2$hasDesc && step.desc }}" class="dj-steps__title dj-steps__title--desc">{{ step.desc }}</view>
+      <view class="dj-steps__icons">
+        <view class="dj-steps__circle"/>
+      </view>
+      <view class="dj-steps__line"/>
+    </view>
+  </view>
+
+        </view>
+      </view>
+
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-cell__bd">
+          
+  <view class="dj-steps dj-steps--{{ $Steps3$type == 'vertical' ? 'vsteps' : 'steps' }} dj-steps--{{ $Steps3$steps.length }} {{ $Steps3$className }}">
+    <view  wx:for="{{ $Steps3$steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index" class="dj-steps__step {{ $Steps3$hasDesc ? 'dj-steps__step--db-title' : '' }} {{ index == 0 ? 'dj-steps__step--first-child' : '' }} {{ index == $Steps3$steps.length - 1 ? 'dj-steps__step--last-child' : '' }} {{ step.done ? 'dj-steps__step--done' : '' }} {{ step.current ? 'dj-steps__step--cur' : '' }}">
+      <view class="dj-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ $Steps3$hasDesc && step.desc }}" class="dj-steps__title dj-steps__title--desc">{{ step.desc }}</view>
+      <view class="dj-steps__icons">
+        <view class="dj-steps__circle"/>
+      </view>
+      <view class="dj-steps__line"/>
+    </view>
+  </view>
+
+        </view>
+      </view>
+    </view>
+
+    <view class="dj-panel-title">有描述的steps</view>
+    <view class="dj-panel">
+      <view class="dj-cell">
+        <view class="dj-cell__bd">
+          
+  <view class="dj-steps dj-steps--{{ $Steps4$type == 'vertical' ? 'vsteps' : 'steps' }} dj-steps--{{ $Steps4$steps.length }} {{ $Steps4$className }}">
+    <view  wx:for="{{ $Steps4$steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index" class="dj-steps__step {{ $Steps4$hasDesc ? 'dj-steps__step--db-title' : '' }} {{ index == 0 ? 'dj-steps__step--first-child' : '' }} {{ index == $Steps4$steps.length - 1 ? 'dj-steps__step--last-child' : '' }} {{ step.done ? 'dj-steps__step--done' : '' }} {{ step.current ? 'dj-steps__step--cur' : '' }}">
+      <view class="dj-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ $Steps4$hasDesc && step.desc }}" class="dj-steps__title dj-steps__title--desc">{{ step.desc }}</view>
+      <view class="dj-steps__icons">
+        <view class="dj-steps__circle"/>
+      </view>
+      <view class="dj-steps__line"/>
+    </view>
+  </view>
+
+        </view>
+      </view>
+
+    <view class="dj-panel-title">垂直方向的steps</view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell">
+        <view class="dj-cell__bd">
+          
+  <view class="dj-steps dj-steps--{{ $Steps5$type == 'vertical' ? 'vsteps' : 'steps' }} dj-steps--{{ $Steps5$steps.length }} {{ $Steps5$className }}">
+    <view  wx:for="{{ $Steps5$steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index" class="dj-steps__step {{ $Steps5$hasDesc ? 'dj-steps__step--db-title' : '' }} {{ index == 0 ? 'dj-steps__step--first-child' : '' }} {{ index == $Steps5$steps.length - 1 ? 'dj-steps__step--last-child' : '' }} {{ step.done ? 'dj-steps__step--done' : '' }} {{ step.current ? 'dj-steps__step--cur' : '' }}">
+      <view class="dj-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ $Steps5$hasDesc && step.desc }}" class="dj-steps__title dj-steps__title--desc">{{ step.desc }}</view>
+      <view class="dj-steps__icons">
+        <view class="dj-steps__circle"/>
+      </view>
+      <view class="dj-steps__line"/>
+    </view>
+  </view>
+
+        </view>
+      </view>
+
+      <view class="dj-cell dj-cell--last-child">
+        <view class="dj-cell__bd">
+          
+  <view class="dj-steps dj-steps--{{ $Steps6$type == 'vertical' ? 'vsteps' : 'steps' }} dj-steps--{{ $Steps6$steps.length }} {{ $Steps6$className }}">
+    <view  wx:for="{{ $Steps6$steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index" class="dj-steps__step {{ $Steps6$hasDesc ? 'dj-steps__step--db-title' : '' }} {{ index == 0 ? 'dj-steps__step--first-child' : '' }} {{ index == $Steps6$steps.length - 1 ? 'dj-steps__step--last-child' : '' }} {{ step.done ? 'dj-steps__step--done' : '' }} {{ step.current ? 'dj-steps__step--cur' : '' }}">
+      <view class="dj-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ $Steps6$hasDesc && step.desc }}" class="dj-steps__title dj-steps__title--desc">{{ step.desc }}</view>
+      <view class="dj-steps__icons">
+        <view class="dj-steps__circle"/>
+      </view>
+      <view class="dj-steps__line"/>
+    </view>
+  </view>
+
+        </view>
+      </view>
+    </view>
+
+    <view class="dj-panel-title">可自定义class</view>
+    <view class="dj-panel">
+      <view class="dj-cell__bd">
+        
+  <view class="dj-steps dj-steps--{{ $Steps7$type == 'vertical' ? 'vsteps' : 'steps' }} dj-steps--{{ $Steps7$steps.length }} {{ $Steps7$className }}">
+    <view  wx:for="{{ $Steps7$steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index" class="dj-steps__step {{ $Steps7$hasDesc ? 'dj-steps__step--db-title' : '' }} {{ index == 0 ? 'dj-steps__step--first-child' : '' }} {{ index == $Steps7$steps.length - 1 ? 'dj-steps__step--last-child' : '' }} {{ step.done ? 'dj-steps__step--done' : '' }} {{ step.current ? 'dj-steps__step--cur' : '' }}">
+      <view class="dj-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ $Steps7$hasDesc && step.desc }}" class="dj-steps__title dj-steps__title--desc">{{ step.desc }}</view>
+      <view class="dj-steps__icons">
+        <view class="dj-steps__circle"/>
+      </view>
+      <view class="dj-steps__line"/>
+    </view>
+  </view>
+
+      </view>
+    </view>
+  </view>
+</view>

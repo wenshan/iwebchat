@@ -1,0 +1,13 @@
+
+<view class="container">
+
+  <view class="doc-title">TOPTIPS</view>
+
+  <view class="dj-btns" style="margin-top: 30vh;">
+    <button class="dj-btn" bindtap="showTopTips">
+      显示toptips
+    </button>
+  </view>
+</view>
+
+  <view animation="{{$Toptips1$animationData}}" class="dj-toptips"> {{ $Toptips1$topTips.content }} </view>

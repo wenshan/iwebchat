@@ -1,0 +1,63 @@
+/**
+ * Badge Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="css">
+.dj-badge {
+  position: relative;
+}
+.dj-badge__count {
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  height: 1.6em;
+  min-width: 1.6em;
+  line-height: 1.6;
+  padding: 0 .4em;
+  font-size: 10px;
+  font-family: tahoma;
+  border-radius: .8em;
+  background: #FF4444;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(50%);
+  transform-origin: -10% center;
+  z-index: 10;
+  box-shadow: 0 0 0 1px #fff;
+  box-sizing: border-box;
+}
+</style>
+<template>
+    <view class="{{className || ''}} dj-badge">
+      <view class="dj-badge__count" wx:if="{{countText}}">{{countText}}</view>
+    </view>
+</template>
+<script>
+    import wepy from 'wepy';
+    export default class Badge extends wepy.component {
+      props = {
+        className: {
+            type: String,
+            default:'',
+        },
+        countText: {
+            type: String,
+            default:'',
+        }
+      }
+
+      events = {
+      }
+
+      methods = {
+      }
+
+      onLoad() {
+
+      }
+    }
+</script>

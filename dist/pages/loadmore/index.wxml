@@ -1,0 +1,74 @@
+
+    <view class="container">
+        <view class="doc-title">LOADMORE</view>
+
+        
+    <block  wx:if="{{$Loadmore1$nomore}}">
+        <view class="dj-loadmore dj-loadmore--nomore">
+            <view class="dj-loadmore__tips">
+                <view class="dj-loadmore__dot"/>
+            </view>
+        </view>
+    </block>
+
+    <block  wx:elif="{{$Loadmore1$nodata}}">
+        <view class="dj-loadmore dj-loadmore--nodata">
+            <view class="dj-loadmore__tips">{{ $Loadmore1$nodata_str || '暂无数据' }}</view>
+        </view>
+    </block>
+
+    <block  wx:elif="{{$Loadmore1$loading}}">
+        <view class="dj-loadmore">
+            <view class="dj-loading"/>
+            <view class="dj-loadmore__tips">加载中...</view>
+        </view>
+    </block>
+
+
+        
+    <block  wx:if="{{$Loadmore2$nomore}}">
+        <view class="dj-loadmore dj-loadmore--nomore">
+            <view class="dj-loadmore__tips">
+                <view class="dj-loadmore__dot"/>
+            </view>
+        </view>
+    </block>
+
+    <block  wx:elif="{{$Loadmore2$nodata}}">
+        <view class="dj-loadmore dj-loadmore--nodata">
+            <view class="dj-loadmore__tips">{{ $Loadmore2$nodata_str || '暂无数据' }}</view>
+        </view>
+    </block>
+
+    <block  wx:elif="{{$Loadmore2$loading}}">
+        <view class="dj-loadmore">
+            <view class="dj-loading"/>
+            <view class="dj-loadmore__tips">加载中...</view>
+        </view>
+    </block>
+
+
+        
+    <block  wx:if="{{$Loadmore3$nomore}}">
+        <view class="dj-loadmore dj-loadmore--nomore">
+            <view class="dj-loadmore__tips">
+                <view class="dj-loadmore__dot"/>
+            </view>
+        </view>
+    </block>
+
+    <block  wx:elif="{{$Loadmore3$nodata}}">
+        <view class="dj-loadmore dj-loadmore--nodata">
+            <view class="dj-loadmore__tips">{{ $Loadmore3$nodata_str || '暂无数据' }}</view>
+        </view>
+    </block>
+
+    <block  wx:elif="{{$Loadmore3$loading}}">
+        <view class="dj-loadmore">
+            <view class="dj-loading"/>
+            <view class="dj-loadmore__tips">加载中...</view>
+        </view>
+    </block>
+
+
+    </view>

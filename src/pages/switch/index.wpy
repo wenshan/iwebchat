@@ -1,0 +1,126 @@
+
+
+<style lang="less">
+  .dj-panel {
+    padding: 10px;
+  }
+  .dj-switch {
+    margin-right: 8px;
+  }
+
+</style>
+<template>
+<view class="container">
+
+  <view class="doc-title">SWITCH</view>
+
+  <view class="dj-panel-title">同步开关</view>
+  <view class="dj-panel">
+
+    <Switch1
+      :checked.sync="syncChecked"
+      componentId="sync"
+      :handleSwitchChange.sync="handleSwitchChange"
+    >
+    </Switch1>
+  </view>
+
+  <view class="dj-panel-title">异步开关</view>
+  <view class="dj-panel">
+    <Switch2
+    :checked.sync="asyncChecked"
+    componentId="async"
+    :loading.sync="parse.getChecked(async,'loading')"
+    :handleSwitchChange.sync="handleSwitchChange"
+    >
+  </Switch2>
+  </view>
+
+  <view class="dj-panel-title">开关不可用</view>
+  <view class="dj-panel">
+    <Switch4
+    :checked="true"
+    :disabled="true"
+    componentId="switch4"
+    ></Switch4>
+  </view>
+</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Switch1 from '@/components/wepy-switch/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Switch extends wepy.page {
+    constructor(){
+      super();
+      this.handleSwitchChange=this.handleSwitchChange.bind(this);
+    }
+    config = {
+      navigationBarTitleText: "Switch 开关"
+    }
+    components = {
+      Switch1: Switch1,
+      Switch2: Switch1,
+      Switch3: Switch1,
+      Switch4: Switch1,
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      sync: {
+        checked: true
+      },
+      async: {
+        checked: true,
+        loading: false
+      },
+    }
+
+    computed = {
+      syncChecked(){
+        return this.sync.checked;
+      },
+      asyncChecked(){
+        return this.async.checked;
+      },
+    }
+
+    methods = {
+    }
+    handleSwitchChange(e) {
+      var componentId = e.componentId;
+      var checked = e.checked;
+
+      if (componentId == 'sync') {
+        // 同步开关
+          this[componentId].checked=checked;
+      } else if (componentId == 'async') {
+        // 异步开关
+        this[componentId].loading=true;
+        setTimeout(() => {
+          this[componentId].loading= false;
+          this[componentId].checked= checked;
+          this.$apply();
+        }, 500);
+      }
+      this.$apply();
+    }
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

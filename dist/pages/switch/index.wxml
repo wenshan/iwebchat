@@ -1,0 +1,42 @@
+
+<view class="container">
+
+  <view class="doc-title">SWITCH</view>
+
+  <view class="dj-panel-title">同步开关</view>
+  <view class="dj-panel">
+
+    
+  <view class="dj-switch dj-switch--{{ $Switch1$checked ? 'on' : 'off' }} {{ $Switch1$disabled ? 'dj-swtich--disabled' : '' }}" data-checked="{{ $Switch1$checked }}" data-loading="{{ $Switch1$loading }}" data-disabled="{{ $Switch1$disabled }}" data-component-id="{{ $Switch1$componentId }}" bindtap="$Switch1$_handledjSwitchChange">
+    <view class="dj-switch__circle">
+      <view hidden="{{ !$Switch1$loading }}" class="dj-switch__loading"/>
+    </view>
+    <view class="dj-switch__bg"/>
+  </view>
+
+  </view>
+
+  <view class="dj-panel-title">异步开关</view>
+  <view class="dj-panel">
+    
+  <view class="dj-switch dj-switch--{{ $Switch2$checked ? 'on' : 'off' }} {{ $Switch2$disabled ? 'dj-swtich--disabled' : '' }}" data-checked="{{ $Switch2$checked }}" data-loading="{{ $Switch2$loading }}" data-disabled="{{ $Switch2$disabled }}" data-component-id="{{ $Switch2$componentId }}" bindtap="$Switch2$_handledjSwitchChange">
+    <view class="dj-switch__circle">
+      <view hidden="{{ !$Switch2$loading }}" class="dj-switch__loading"/>
+    </view>
+    <view class="dj-switch__bg"/>
+  </view>
+
+  </view>
+
+  <view class="dj-panel-title">开关不可用</view>
+  <view class="dj-panel">
+    
+  <view class="dj-switch dj-switch--{{ $Switch4$checked ? 'on' : 'off' }} {{ $Switch4$disabled ? 'dj-swtich--disabled' : '' }}" data-checked="{{ $Switch4$checked }}" data-loading="{{ $Switch4$loading }}" data-disabled="{{ $Switch4$disabled }}" data-component-id="{{ $Switch4$componentId }}" bindtap="$Switch4$_handledjSwitchChange">
+    <view class="dj-switch__circle">
+      <view hidden="{{ !$Switch4$loading }}" class="dj-switch__loading"/>
+    </view>
+    <view class="dj-switch__bg"/>
+  </view>
+
+  </view>
+</view>

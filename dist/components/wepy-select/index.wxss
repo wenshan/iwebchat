@@ -1,0 +1,4 @@
+
+.dj-select__list .dj-select__radio{
+  display: none;
+}

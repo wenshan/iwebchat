@@ -1,0 +1,9 @@
+<style>
+    @import './index.wxss';
+</style>
+<script>
+import wepy from 'wepy'
+export default class Style extends wepy.component {
+
+}
+</script>

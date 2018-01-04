@@ -1,0 +1,19 @@
+
+.icon-wrap {
+    width: 33.33333%;
+    height: 100px;
+    float: left;
+    text-align: center;
+}
+.icon-classname {
+    color: #999;
+    font-size: 10px;
+}
+.dj-icon {
+    font-size: 24px;
+    margin: 20px;
+}
+.dj-icon-base {
+    font-size: 24px;
+    margin: 20px;
+}

@@ -1,0 +1,25 @@
+
+<view class="container">
+    <view class="doc-title">ICON</view>
+    <!-- ICON SY -->
+    <view class="dj-panel-title">ICON SY</view>
+    <view class="dj-panel">
+        <block wx:for="{{iconsSy}}" wx:for-index="index" wx:for-item="icon" wx:key="index">
+            <view class="icon-wrap">
+                <view class="dj-icon dj-icon-{{ icon }}" style="color: #ff4343;"/>
+                <view class="icon-classname"> dj-icon dj-icon-{{ icon }}</view>
+            </view>
+        </block>
+    </view>
+
+    <!-- ICON BASE -->
+    <view class="dj-panel-title">ICON BASE</view>
+    <view class="dj-panel">
+        <block wx:for="{{iconsBase}}" wx:for-index="index" wx:for-item="icon" wx:key="index">
+            <view class="icon-wrap">
+            <view class="dj-icon-base dj-icon-base-{{ icon }}" style="color: #ff4343;"/>
+            <view class="icon-classname">dj-icon-base dj-base-icon-{{ icon }}</view>
+            </view>
+        </block>
+    </view>
+</view>

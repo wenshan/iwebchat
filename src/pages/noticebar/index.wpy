@@ -1,0 +1,73 @@
+<template>
+    <view class="container">
+
+        <view class="doc-title">NOTICEBAR（后续支持滚动）</view>
+
+        <view class="dj-panel-title">滚动通告栏</view>
+        <view class="dj-panel">
+            <Noticebar1 :noticebar.sync="movable"></Noticebar1>
+        </view>
+
+        <view class="dj-panel-title">静止通告栏1</view>
+        <view class="dj-panel">
+            <Noticebar2 :noticebar.sync="static1"></Noticebar2>
+        </view>
+
+        <view class="dj-panel-title">静止通告栏2</view>
+        <view class="dj-panel">
+            <Noticebar3 :noticebar.sync="static2"></Noticebar3>
+        </view>
+
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Noticebar from '@/components/wepy-noticebar/index'
+
+export default class NoticebarEx extends wepy.page {
+    config = {
+        navigationBarTitleText: 'Noticebar 通告栏'
+    }
+
+    components = {
+        Noticebar1: Noticebar,
+        Noticebar2: Noticebar,
+        Noticebar3: Noticebar
+    }
+
+    data = {
+        movable: {
+            componentId: 'movable',
+            text: '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。',
+            type: 'movable'
+        },
+        static1: {
+            componentId: 'static1',
+            text: '足协杯战线连续第2年上演广州德比战',
+            type: 'static1'
+        },
+        static2: {
+            componentId: 'static2',
+            text: '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。',
+            type: 'static2'
+        }
+    }
+
+    methods = {
+
+    }
+
+    events = {
+
+    }
+
+    onReady (){
+        setTimeout(() => {
+        this.$invoke('Noticebar1', 'initZanNoticeBarScroll', {});
+    }, 1000);
+
+    }
+
+}
+</script>

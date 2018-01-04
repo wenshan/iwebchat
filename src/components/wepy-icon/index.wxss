@@ -1,0 +1,186 @@
+@font-face{
+font-family:zanui-weapp-icon;
+src:url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-4381aded05.eot);
+src:url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-4381aded05.eot?#iefix) format('embedded-opentype'),
+url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-4381aded05.woff2) format('woff2'),
+url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-4381aded05.woff) format('woff'),
+url(https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-4381aded05.ttf) format('truetype')
+}
+@font-face {
+	font-family: "syicon";
+	src: url('https://html.kaipao.cc/syui/scss/font/syicon_1513316328.eot');
+	src: url('https://html.kaipao.cc/syui/scss/font/syicon_1513316328.eot?#iefix') format('eot'),
+		 url('https://html.kaipao.cc/syui/scss/font/syicon_1513316328.woff2') format('woff2'),
+		 url('https://html.kaipao.cc/syui/scss/font/syicon_1513316328.woff') format('woff'),
+		 url('https://html.kaipao.cc/syui/scss/font/syicon_1513316328.ttf') format('truetype'),
+		 url('https://html.kaipao.cc/syui/scss/font/syicon_1513316328.svg#syicon_1513316328') format('svg');
+}
+
+.dj-icon{display:inline-block}
+.dj-icon:before {
+	font-family:syicon!important;
+    font-style:normal;
+    font-weight:400;
+    speak:none;
+    display:inline-block;
+    text-decoration:inherit;
+    width:1em;text-align:center;
+    font-variant:normal;text-transform:none;
+    line-height:1em;
+    -webkit-font-smoothing:antialiased
+}
+
+.dj-icon-base{display:inline-block}
+.dj-icon-base:before{
+    font-family:zanui-weapp-icon!important;
+    font-style:normal;
+    font-weight:400;
+    speak:none;
+    display:inline-block;
+    text-decoration:inherit;
+    width:1em;text-align:center;
+    font-variant:normal;text-transform:none;
+    line-height:1em;
+    -webkit-font-smoothing:antialiased
+}
+.dj-icon-base-qr-invalid:before{content:'\e800'}
+.dj-icon-base-qr:before{content:'\e801'}
+.dj-icon-base-exchange:before{content:'\e802'}
+.dj-icon-base-close:before{content:'\e803'}
+.dj-icon-base-location:before{content:'\e804'}
+.dj-icon-base-upgrade:before{content:'\e805'}
+.dj-icon-base-check:before{content:'\e806'}
+.dj-icon-base-checked:before{content:'\e807'}
+.dj-icon-base-like-o:before{content:'\e808'}
+.dj-icon-base-like:before{content:'\e809'}
+.dj-icon-base-chat:before{content:'\e80a'}
+.dj-icon-base-shop:before{content:'\e80b'}
+.dj-icon-base-photograph:before{content:'\e80c'}
+.dj-icon-base-add:before{content:'\e80d'}
+.dj-icon-base-add2:before{content:'\e80e'}
+.dj-icon-base-photo:before{content:'\e80f'}
+.dj-icon-base-logistics:before{content:'\e810'}
+.dj-icon-base-edit:before{content:'\e811'}
+.dj-icon-base-passed:before{content:'\e812'}
+.dj-icon-base-cart:before{content:'\e813'}
+.dj-icon-base-shopping-cart:before{content:'\e814'}
+.dj-icon-base-arrow:before{content:'\e815'}
+.dj-icon-base-gift:before{content:'\e816'}
+.dj-icon-base-search:before{content:'\e817'}
+.dj-icon-base-clear:before{content:'\e818'}
+.dj-icon-base-success:before{content:'\e819'}
+.dj-icon-base-fail:before{content:'\e81a'}
+.dj-icon-base-contact:before{content:'\e81b'}
+.dj-icon-base-wechat:before{content:'\e81c'}
+.dj-icon-base-alipay:before{content:'\e81d'}
+.dj-icon-base-password-view:before{content:'\e81e'}
+.dj-icon-base-password-not-view:before{content:'\e81f'}
+.dj-icon-base-wap-nav:before{content:'\e820'}
+.dj-icon-base-wap-home:before{content:'\e821'}
+.dj-icon-base-ecard-pay:before{content:'\e822'}
+.dj-icon-base-balance-pay:before{content:'\e823'}
+.dj-icon-base-peer-pay:before{content:'\e824'}
+.dj-icon-base-credit-pay:before{content:'\e825'}
+.dj-icon-base-debit-pay:before{content:'\e826'}
+.dj-icon-base-other-pay:before{content:'\e827'}
+.dj-icon-base-browsing-history:before{content:'\e828'}
+.dj-icon-base-goods-collect:before{content:'\e829'}
+.dj-icon-base-shop-collect:before{content:'\e82a'}
+.dj-icon-base-receive-gift:before{content:'\e82b'}
+.dj-icon-base-send-gift:before{content:'\e82c'}
+.dj-icon-base-setting:before{content:'\e82d'}
+.dj-icon-base-points:before{content:'\e82e'}
+.dj-icon-base-coupon:before{content:'\e82f'}
+.dj-icon-base-free-postage:before{content:'\e830'}
+.dj-icon-base-discount:before{content:'\e831'}
+.dj-icon-base-birthday-privilege:before{content:'\e832'}
+.dj-icon-base-member-day-privilege:before{content:'\e833'}
+.dj-icon-base-balance-details:before{content:'\e834'}
+.dj-icon-base-cash-back-record:before{content:'\e835'}
+.dj-icon-base-points-mall:before{content:'\e836'}
+.dj-icon-base-exchange-record:before{content:'\e837'}
+.dj-icon-base-pending-payment:before{content:'\e838'}
+.dj-icon-base-pending-orders:before{content:'\e839'}
+.dj-icon-base-pending-deliver:before{content:'\e83a'}
+.dj-icon-base-pending-evaluate:before{content:'\e83b'}
+.dj-icon-base-gift-card-pay:before{content:'\e83c'}
+.dj-icon-base-cash-on-deliver:before{content:'\e83d'}
+.dj-icon-base-underway:before{content:'\e83e'}
+.dj-icon-base-point-gift:before{content:'\e83f'}
+.dj-icon-base-after-sale:before{content:'\e840'}
+.dj-icon-base-edit-data:before{content:'\e841'}
+.dj-icon-base-question:before{content:'\e842'}
+.dj-icon-base-delete:before{content:'\e843'}
+.dj-icon-base-records:before{content:'\e844'}
+.dj-icon-base-description:before{content:'\e845'}
+.dj-icon-base-card:before{content:'\e846'}
+.dj-icon-base-gift-card:before{content:'\e847'}
+.dj-icon-base-clock:before{content:'\e848'}
+.dj-icon-base-gold-coin:before{content:'\e849'}
+.dj-icon-base-completed:before{content:'\e84a'}
+.dj-icon-base-value-card:before{content:'\e84b'}
+.dj-icon-base-certificate:before{content:'\e84c'}
+.dj-icon-base-tosend:before{content:'\e84d'}
+.dj-icon-base-sign:before{content:'\e84e'}
+.dj-icon-base-home:before{content:'\e84f'}
+.dj-icon-base-phone:before{content:'\e850'}
+.dj-icon-base-add-o:before{content:'\e851'}
+.dj-icon-base-play:before{content:'\e852'}
+.dj-icon-base-pause:before{content:'\e853'}
+.dj-icon-base-stop:before{content:'\e854'}
+.dj-icon-base-hot:before{content:'\e855'}
+.dj-icon-base-new:before{content:'\e856'}
+.dj-icon-base-new-arrival:before{content:'\e857'}
+.dj-icon-base-hot-sale:before{content:'\e858'}
+
+.dj-icon-address:before {
+	content: "\E001";
+}
+
+.dj-icon-agent:before {
+	content: "\E002";
+}
+
+.dj-icon-arrow:before {
+	content: "\E003";
+}
+
+.dj-icon-close:before {
+	content: "\E004";
+}
+
+.dj-icon-craftVip:before {
+	content: "\E005";
+}
+
+.dj-icon-door:before {
+	content: "\E006";
+}
+
+.dj-icon-heart:before {
+	content: "\E007";
+}
+
+.dj-icon-hearted:before {
+	content: "\E008";
+}
+
+.dj-icon-like:before {
+	content: "\E009";
+}
+
+.dj-icon-msg:before {
+	content: "\E00A";
+}
+
+.dj-icon-plus:before {
+	content: "\E00B";
+}
+
+.dj-icon-service:before {
+	content: "\E00C";
+}
+
+.dj-icon-share:before {
+	content: "\E00D";
+}

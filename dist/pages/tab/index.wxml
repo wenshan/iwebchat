@@ -1,0 +1,66 @@
+
+<view class="container">
+
+  <view class="doc-title">TAB</view>
+
+  <view style="margin: 20px 0">
+    
+  <view class="dj-tab">
+    <block  wx:if="{{$Tab1$tab.scroll}}">
+      <scroll-view class="dj-tab__bd dj-tab__bd--scroll {{ $Tab1$fixed ? 'dj-tab__bd--fixed' : '' }}" scroll-x="true" style="height: {{ $Tab1$tab.height ? $Tab1$tab.height + 'px' : 'auto' }}">
+      <view wx:for="{{ $Tab1$tab.list }}" wx:key="id" class="dj-tab__item {{ $Tab1$tab.selectedId == item.id ? 'dj-tab__item--selected' : '' }}" data-component-id="{{ $Tab1$componentId }}" data-item-id="{{ item.id }}" bindtap="$Tab1$_handledjTabChange">
+        <view class="dj-tab__title">{{ item.title }}</view>
+      </view>
+      </scroll-view>
+    </block>
+    <block  wx:else>
+      <view class="dj-tab__bd {{ $Tab1$fixed ? 'dj-tab__bd--fixed' : '' }}">
+        <view wx:for="{{ $Tab1$tab.list }}" wx:key="id" class="dj-tab__item {{ $Tab1$tab.selectedId == item.id ? 'dj-tab__item--selected' : '' }}" data-component-id="{{ $Tab1$componentId }}" data-item-id="{{ item.id }}" bindtap="$Tab1$_handledjTabChange">
+          <view class="dj-tab__title">{{ item.title }}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  </view>
+  <view style="margin: 20px 0">
+    
+  <view class="dj-tab">
+    <block  wx:if="{{$Tab2$tab.scroll}}">
+      <scroll-view class="dj-tab__bd dj-tab__bd--scroll {{ $Tab2$fixed ? 'dj-tab__bd--fixed' : '' }}" scroll-x="true" style="height: {{ $Tab2$tab.height ? $Tab2$tab.height + 'px' : 'auto' }}">
+      <view wx:for="{{ $Tab2$tab.list }}" wx:key="id" class="dj-tab__item {{ $Tab2$tab.selectedId == item.id ? 'dj-tab__item--selected' : '' }}" data-component-id="{{ $Tab2$componentId }}" data-item-id="{{ item.id }}" bindtap="$Tab2$_handledjTabChange">
+        <view class="dj-tab__title">{{ item.title }}</view>
+      </view>
+      </scroll-view>
+    </block>
+    <block  wx:else>
+      <view class="dj-tab__bd {{ $Tab2$fixed ? 'dj-tab__bd--fixed' : '' }}">
+        <view wx:for="{{ $Tab2$tab.list }}" wx:key="id" class="dj-tab__item {{ $Tab2$tab.selectedId == item.id ? 'dj-tab__item--selected' : '' }}" data-component-id="{{ $Tab2$componentId }}" data-item-id="{{ item.id }}" bindtap="$Tab2$_handledjTabChange">
+          <view class="dj-tab__title">{{ item.title }}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  </view>
+  <view style="margin: 20px 0">
+    
+  <view class="dj-tab">
+    <block  wx:if="{{$Tab2$tab.scroll}}">
+      <scroll-view class="dj-tab__bd dj-tab__bd--scroll {{ $Tab2$fixed ? 'dj-tab__bd--fixed' : '' }}" scroll-x="true" style="height: {{ $Tab2$tab.height ? $Tab2$tab.height + 'px' : 'auto' }}">
+      <view wx:for="{{ $Tab2$tab.list }}" wx:key="id" class="dj-tab__item {{ $Tab2$tab.selectedId == item.id ? 'dj-tab__item--selected' : '' }}" data-component-id="{{ $Tab2$componentId }}" data-item-id="{{ item.id }}" bindtap="$Tab2$_handledjTabChange">
+        <view class="dj-tab__title">{{ item.title }}</view>
+      </view>
+      </scroll-view>
+    </block>
+    <block  wx:else>
+      <view class="dj-tab__bd {{ $Tab2$fixed ? 'dj-tab__bd--fixed' : '' }}">
+        <view wx:for="{{ $Tab2$tab.list }}" wx:key="id" class="dj-tab__item {{ $Tab2$tab.selectedId == item.id ? 'dj-tab__item--selected' : '' }}" data-component-id="{{ $Tab2$componentId }}" data-item-id="{{ item.id }}" bindtap="$Tab2$_handledjTabChange">
+          <view class="dj-tab__title">{{ item.title }}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  </view>
+</view>

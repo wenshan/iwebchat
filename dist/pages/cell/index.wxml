@@ -1,0 +1,67 @@
+
+  <view class="container">
+
+    <view class="doc-title">CELL</view>
+
+    <view class="dj-panel">
+      
+  <view class="dj-cell {{$Cell1$className}}" bindtap="$Cell1$handletap" data-wpyhandletap-a="{{$Cell1$componentId}}">
+    
+    <view class="dj-cell__bd">{{$Cell1$cellbd}}</view>
+    <view class="dj-cell__ft" catchtap="$Cell1$handleRightIcon" data-wpyhandlerighticon-a="{{$Cell1$componentId}}">{{$Cell1$cellft}}</view>
+  </view>
+
+    </view>
+
+    <view class="dj-panel">
+      
+  <view class="dj-cell {{$Cell2$className}}" bindtap="$Cell2$handletap" data-wpyhandletap-a="{{$Cell2$componentId}}">
+    
+    <view class="dj-cell__bd">{{$Cell2$cellbd}}</view>
+    <view class="dj-cell__ft" catchtap="$Cell2$handleRightIcon" data-wpyhandlerighticon-a="{{$Cell2$componentId}}">{{$Cell2$cellft}}</view>
+  </view>
+
+    </view>
+
+    <view class="dj-panel">
+      
+  <view class="dj-cell {{$Cell3$className}}" bindtap="$Cell3$handletap" data-wpyhandletap-a="{{$Cell3$componentId}}">
+    <view class="dj-cell__icon dj-icon dj-icon-checked" style="color:#38f;"/>
+    <view class="dj-cell__bd">{{$Cell3$cellbd}}</view>
+    <view class="dj-cell__ft" catchtap="$Cell3$handleRightIcon" data-wpyhandlerighticon-a="{{$Cell3$componentId}}">{{$Cell3$cellft}}</view>
+  </view>
+
+    </view>
+
+    <view class="dj-panel">
+      
+  <view class="dj-cell {{$Cell4$className}}" bindtap="$Cell4$handletap" data-wpyhandletap-a="{{$Cell4$componentId}}">
+    
+    <view class="dj-cell__bd">{{$Cell4$cellbd}}<block>
+        <view class="dj-cell__text">单行列表</view>
+        <view class="dj-cell__desc">附加描述</view>
+      </block></view>
+    <view class="dj-cell__ft" catchtap="$Cell4$handleRightIcon" data-wpyhandlerighticon-a="{{$Cell4$componentId}}">{{$Cell4$cellft}}</view>
+  </view>
+
+    </view>
+
+    <view class="dj-panel">
+      
+  <view class="dj-cell {{$Cell5$className}}" bindtap="$Cell5$handletap" data-wpyhandletap-a="{{$Cell5$componentId}}">
+    
+    <view class="dj-cell__bd">{{$Cell5$cellbd}}</view>
+    <view class="dj-cell__ft" catchtap="$Cell5$handleRightIcon" data-wpyhandlerighticon-a="{{$Cell5$componentId}}">{{$Cell5$cellft}}<block>
+        
+  <view class="dj-switch dj-switch--{{ $Switch1$checked ? 'on' : 'off' }} {{ $Switch1$disabled ? 'dj-swtich--disabled' : '' }}" data-checked="{{ $Switch1$checked }}" data-loading="{{ $Switch1$loading }}" data-disabled="{{ $Switch1$disabled }}" data-component-id="{{ $Switch1$componentId }}" bindtap="$Switch1$_handledjSwitchChange">
+    <view class="dj-switch__circle">
+      <view hidden="{{ !$Switch1$loading }}" class="dj-switch__loading"/>
+    </view>
+    <view class="dj-switch__bg"/>
+  </view>
+
+      </block></view>
+  </view>
+
+    </view>
+  </view>

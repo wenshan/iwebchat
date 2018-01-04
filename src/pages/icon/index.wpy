@@ -1,0 +1,168 @@
+<template>
+<view class="container">
+    <view class="doc-title">ICON</view>
+    <!-- ICON SY -->
+    <view class="dj-panel-title">ICON SY</view>
+    <view class="dj-panel">
+        <repeat for="{{iconsSy}}" key="index" index="index" item="icon">
+            <view class="icon-wrap">
+                <view class="dj-icon dj-icon-{{ icon }}"  style="color: #ff4343;"></view>
+                <view class="icon-classname"> dj-icon dj-icon-{{ icon }}</view>
+            </view>
+        </repeat>
+    </view>
+
+    <!-- ICON BASE -->
+    <view class="dj-panel-title">ICON BASE</view>
+    <view class="dj-panel">
+        <repeat for="{{iconsBase}}" key="index" index="index" item="icon">
+            <view class="icon-wrap">
+            <view class="dj-icon-base dj-icon-base-{{ icon }}"  style="color: #ff4343;"></view>
+            <view class="icon-classname">dj-icon-base dj-base-icon-{{ icon }}</view>
+            </view>
+        </repeat>
+    </view>
+</view>
+</template>
+<script>
+import wepy from 'wepy'
+import Icon from '@/components/wepy-icon/index'
+
+export default class IconEx extends wepy.page {
+    config = {
+        navigationBarTitleText: 'Icon 图标'
+    }
+
+    data = {
+        iconsBase: [
+            'close',
+            'location',
+            'clock',
+            'gold-coin',
+            'chat',
+            'exchange',
+            'upgrade',
+            'edit',
+            'contact',
+            'passed',
+            'points',
+            'delete',
+            'records',
+            'logistics',
+            'check',
+            'checked',
+            'gift',
+            'like-o',
+            'like',
+            'qr',
+            'qr-invalid',
+            'shop',
+            'photograph',
+            'add',
+            'add2',
+            'add-o',
+            'photo',
+            'cart',
+            'arrow',
+            'search',
+            'clear',
+            'success',
+            'fail',
+            'wechat',
+            'alipay',
+            'password-view',
+            'wap-nav',
+            'password-not-view',
+            'wap-home',
+            'ecard-pay',
+            'balance-pay',
+            'peer-pay',
+            'credit-pay',
+            'debit-pay',
+            'other-pay',
+            'shopping-cart',
+            'browsing-history',
+            'goods-collect',
+            'shop-collect',
+            'receive-gift',
+            'send-gift',
+            'setting',
+            'coupon',
+            'free-postage',
+            'discount',
+            'birthday-privilege',
+            'member-day-privilege',
+            'balance-details',
+            'cash-back-record',
+            'points-mall',
+            'exchange-record',
+            'pending-payment',
+            'pending-orders',
+            'pending-deliver',
+            'pending-evaluate',
+            'cash-on-deliver',
+            'gift-card-pay',
+            'underway',
+            'point-gift',
+            'after-sale',
+            'edit-data',
+            'question',
+            'description',
+            'card',
+            'gift-card',
+            'completed',
+            'value-card',
+            'certificate',
+            'tosend',
+            'sign',
+            'home',
+            'phone',
+            'play',
+            'pause',
+            'stop',
+            'hot',
+            'new',
+            'new-arrival',
+            'hot-sale'
+        ],
+        iconsSy:[
+            'craftVip',
+            'heart',
+            'hearted',
+            'like',
+            'plus',
+            'arrow',
+            'address',
+            'address',
+            'agent',
+            'close',
+            'share',
+            'msg',
+            'door'
+        ]
+    }
+
+}
+
+</script>
+
+<style>
+.icon-wrap {
+    width: 33.33333%;
+    height: 100px;
+    float: left;
+    text-align: center;
+}
+.icon-classname {
+    color: #999;
+    font-size: 10px;
+}
+.dj-icon {
+    font-size: 24px;
+    margin: 20px;
+}
+.dj-icon-base {
+    font-size: 24px;
+    margin: 20px;
+}
+</style>

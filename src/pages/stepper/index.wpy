@@ -1,0 +1,104 @@
+
+
+<style lang="less">
+</style>
+<template>
+  <view class="container">
+    <view class="doc-title">Stepper</view>
+
+    <view style="padding: 40px 15px">
+      <Stepper1
+      componentId="stepper1"
+      :step.sync="stepper1"
+      :handleStepperChange="handleStepperChange"
+       ></Stepper1>
+    </view>
+
+    <!-- 当最大值等于最小值时，组件不可用 -->
+    <view style="padding: 40px 15px ">
+      <Stepper2
+        componentId="stepper2"
+        :step.sync="stepper2"
+        :handleStepperChange="handleStepperChange"
+      ></Stepper2>
+    </view>
+
+    <!-- small size -->
+    <view style="padding: 40px 15px ">
+      <Stepper3
+      componentId="stepper3"
+      :step.sync="stepper3"
+      size="small"
+      :handleStepperChange="handleStepperChange"
+      >
+      </Stepper3>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Stepper1 from '@/components/wepy-stepper/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Card extends wepy.page {
+    constructor(){
+      super();
+      this.handleStepperChange=this.handleStepperChange.bind(this);
+    }
+    config = {
+      navigationBarTitleText: "Dialog 弹出框"
+    }
+    components = {
+      Stepper1: Stepper1,
+      Stepper2: Stepper1,
+      Stepper3: Stepper1,
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      stepper1: {
+        stepper: 10,
+        min: 1,
+        max: 20
+      },
+      stepper2: {
+        stepper: 1,
+        min: 1,
+        max: 1
+      },
+      stepper3: {
+        stepper: 10,
+        min: 1,
+        max: 20
+      }
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+    handleStepperChange(e) {
+      var componentId = e.componentId;
+      var stepper = e.stepper;
+      this[componentId].stepper=stepper;
+      this.$apply();
+    }
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

@@ -1,0 +1,45 @@
+
+    <view class="container">
+
+        <view class="doc-title">NOTICEBAR（后续支持滚动）</view>
+
+        <view class="dj-panel-title">滚动通告栏</view>
+        <view class="dj-panel">
+            
+    <view class="dj-noticebar">
+        <view id="{{ $Noticebar1$noticebar.componentId }}__content-wrap" style="height: 18px; overflow: hidden; position: relative;">
+            <view animation="{{ $Noticebar1$animationData }}" id="{{ $Noticebar1$noticebar.componentId }}__content" style="position: absolute; white-space: nowrap;">
+                {{ $Noticebar1$noticebar.text }}
+            </view>
+        </view>
+    </view>
+
+        </view>
+
+        <view class="dj-panel-title">静止通告栏1</view>
+        <view class="dj-panel">
+            
+    <view class="dj-noticebar">
+        <view id="{{ $Noticebar2$noticebar.componentId }}__content-wrap" style="height: 18px; overflow: hidden; position: relative;">
+            <view animation="{{ $Noticebar2$animationData }}" id="{{ $Noticebar2$noticebar.componentId }}__content" style="position: absolute; white-space: nowrap;">
+                {{ $Noticebar2$noticebar.text }}
+            </view>
+        </view>
+    </view>
+
+        </view>
+
+        <view class="dj-panel-title">静止通告栏2</view>
+        <view class="dj-panel">
+            
+    <view class="dj-noticebar">
+        <view id="{{ $Noticebar3$noticebar.componentId }}__content-wrap" style="height: 18px; overflow: hidden; position: relative;">
+            <view animation="{{ $Noticebar3$animationData }}" id="{{ $Noticebar3$noticebar.componentId }}__content" style="position: absolute; white-space: nowrap;">
+                {{ $Noticebar3$noticebar.text }}
+            </view>
+        </view>
+    </view>
+
+        </view>
+
+    </view>

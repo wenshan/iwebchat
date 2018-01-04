@@ -1,0 +1,75 @@
+
+    <view class="container">
+
+        <view class="doc-title">POPUP</view>
+
+        <view class="dj-btns" style="margin-top: 30vh;">
+            <button class="dj-btn" bindtap="togglePopup">
+                弹出popup
+            </button>
+            <button class="dj-btn" bindtap="toggleTopPopup">
+                从顶部弹出popup
+            </button>
+            <button class="dj-btn" bindtap="toggleBottomPopup">
+                从底部弹出popup
+            </button>
+            <button class="dj-btn" bindtap="toggleLeftPopup">
+                从左边弹出popup
+            </button>
+            <button class="dj-btn" bindtap="toggleRightPopup">
+                从右边弹出popup
+            </button>
+        </view>
+
+        <view class="dj-popup {{ showPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" bindtap="togglePopup"/>
+            <view class="dj-popup__container popup-example--center">
+                <view class="dj-btns">
+                    <button class="dj-btn" bindtap="togglePopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+        <view class="popup-example--left dj-popup dj-popup--left {{ showLeftPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" bindtap="toggleLeftPopup"/>
+            <view class="dj-popup__container">
+                <view class="dj-btns">
+                    <button class="dj-btn" catchtap="toggleLeftPopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+        <view class="popup-example--right dj-popup dj-popup--right {{ showRightPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" catchtap="toggleRightPopup"/>
+            <view class="dj-popup__container">
+                <view class="dj-btns">
+                    <button class="dj-btn" catchtap="toggleRightPopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+        <view class="popup-example--top dj-popup dj-popup--top {{ showTopPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" catchtap="toggleTopPopup"/>
+            <view class="dj-popup__container">
+                内容
+            </view>
+        </view>
+
+        <view class="popup-example--bottom dj-popup dj-popup--bottom {{ showBottomPopup ? 'dj-popup--show' : ''}}">
+            <view class="dj-popup__mask" catchtap="toggleBottomPopup"/>
+            <view class="dj-popup__container">
+                <view class="dj-btns">
+                    <button class="dj-btn" catchhtap="toggleBottomPopup">
+                        关闭 popup
+                    </button>
+                </view>
+            </view>
+        </view>
+
+    </view>

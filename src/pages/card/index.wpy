@@ -1,0 +1,70 @@
+<style lang="less">
+</style>
+<template>
+  <view class="container">
+
+    <view class="doc-title">CARD</view>
+
+    <view class="dj-panel">
+      <card1
+        src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
+        rightText="¥ 999.99"
+        leftText="红烧牛肉【虚拟商品】【有库存】【有sku】"
+      >
+      <view class="dj-card__detail-row dj-c-gray-darker">
+        <view class="dj-card__right-col">x2</view>
+        <view class="dj-card__left-col">
+          3000克 50%
+        </view>
+      </view>
+
+      <view class="dj-card__detail-row dj-c-gray-darker">
+        <view class="dj-card__left-col dj-c-red">已发货</view>
+      </view>
+    </card1>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import List from '../components/list'
+  import Card1 from '@/components/wepy-card/index' // alias example
+  // import Counter from 'counter' // alias example
+  // import Group from '../components/group'
+  // import Toast from 'wepy-com-toast'
+  // import testMixin from '../mixins/test'
+
+  export default class Card extends wepy.page {
+    config = {
+      navigationBarTitleText: "Card 卡片"
+    }
+    components = {
+      card1: Card1,
+      // counter1: Counter,
+      // counter2: Counter,
+      // list: List,
+      // group: Group,
+      // toast: Toast
+    }
+
+    //mixins = [testMixin]
+
+    data = {
+      loading:true,
+      disabled:true
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+
+    events = {
+    }
+
+    onLoad() {
+    }
+  }
+</script>

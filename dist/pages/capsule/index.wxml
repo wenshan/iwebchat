@@ -1,0 +1,54 @@
+
+  <view class="container">
+
+    <view class="doc-title">CAPSULE</view>
+
+    <view class="dj-panel-title">基本用法</view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        
+    <view class="dj-capsule dj-capsule--{{$capsule1$type}}  {{$capsule1$className}}" bindtap="$capsule1$handletap" data-wpyhandletap-a="{{$capsule1$componentId}}">
+      <block  wx:if="{{$capsule1$color}}">
+        <view class="dj-capsule__left" style="background: {{ $capsule1$color }}; border-color: {{ $capsule1$color }}">{{ $capsule1$leftText }}</view>
+        <view class="dj-capsule__right" style="color: {{ $capsule1$color }}; border-color: {{ $capsule1$color }}">{{ $capsule1$rightText }}</view>
+      </block>
+      <block  wx:else>
+        <view class="dj-capsule__left">{{ $capsule1$leftText }}</view>
+        <view class="dj-capsule__right">{{ $capsule1$rightText }}</view>
+      </block>
+    </view>
+
+        
+    <view class="dj-capsule dj-capsule--{{$capsule2$type}}  {{$capsule2$className}}" bindtap="$capsule2$handletap" data-wpyhandletap-a="{{$capsule2$componentId}}">
+      <block  wx:if="{{$capsule2$color}}">
+        <view class="dj-capsule__left" style="background: {{ $capsule2$color }}; border-color: {{ $capsule2$color }}">{{ $capsule2$leftText }}</view>
+        <view class="dj-capsule__right" style="color: {{ $capsule2$color }}; border-color: {{ $capsule2$color }}">{{ $capsule2$rightText }}</view>
+      </block>
+      <block  wx:else>
+        <view class="dj-capsule__left">{{ $capsule2$leftText }}</view>
+        <view class="dj-capsule__right">{{ $capsule2$rightText }}</view>
+      </block>
+    </view>
+
+      </view>
+    </view>
+
+    <view class="dj-panel-title">自定义颜色</view>
+    <view class="dj-panel">
+      <view class="dj-cell dj-cell--last-child">
+        
+    <view class="dj-capsule dj-capsule--{{$capsule3$type}}  {{$capsule3$className}}" bindtap="$capsule3$handletap" data-wpyhandletap-a="{{$capsule3$componentId}}">
+      <block  wx:if="{{$capsule3$color}}">
+        <view class="dj-capsule__left" style="background: {{ $capsule3$color }}; border-color: {{ $capsule3$color }}">{{ $capsule3$leftText }}</view>
+        <view class="dj-capsule__right" style="color: {{ $capsule3$color }}; border-color: {{ $capsule3$color }}">{{ $capsule3$rightText }}</view>
+      </block>
+      <block  wx:else>
+        <view class="dj-capsule__left">{{ $capsule3$leftText }}</view>
+        <view class="dj-capsule__right">{{ $capsule3$rightText }}</view>
+      </block>
+    </view>
+
+      </view>
+    </view>
+
+  </view>

@@ -1,0 +1,206 @@
+/**
+ * Btn Component
+ * @Author: litongqian
+ * @Date:   2017-12-25 16:28:25
+ * @Last Modified by:
+ * @Last Modified time:
+ */
+<style lang="css">
+.dj-btn {
+  position: relative;
+  color: #333;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 2px;
+  border: 1rpx solid #e5e5e5;
+  font-size: 16px;
+  line-height: 45px;
+  height: 45px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.dj-btn::after {
+  display: none;
+}
+.dj-btns {
+  margin: 15px;
+}
+
+/* type */
+.dj-btn--primary {
+  color: #fff;
+  background-color: #4b0;
+  border-color: #0a0;
+}
+
+.dj-btn--warn {
+  color: #fff;
+  background-color: #f85;
+  border-color: #f85;
+}
+
+.dj-btn--danger {
+  color: #fff;
+  background-color: #f44;
+  border-color: #e33;
+}
+
+/* size */
+.dj-btn--small {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+.dj-btn--mini {
+  display: inline-block;
+  line-height: 21px;
+  height: 22px;
+  font-size: 10px;
+  margin-right: 5px;
+  margin-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.dj-btn--large {
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
+  line-height: 50px;
+  height: 50px;
+}
+
+/* plain */
+.dj-btn--plain.dj-btn {
+  background-color: transparent;
+}
+.dj-btn--plain.dj-btn--primary {
+  color: #06BF04;
+}
+.dj-btn--plain.dj-btn--warn {
+  color: #FF6600;
+}
+.dj-btn--plain.dj-btn--danger {
+  color: #FF4444;
+}
+
+/* 重写button组件的button-hover样式 */
+.button-hover {
+  opacity: 0.9;
+}
+
+/* loading */
+.dj-btn--loading {
+  color: transparent;
+  opacity: 1;
+}
+.dj-btn--loading::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: ' ';
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 3px solid #e5e5e5;
+  border-color: #666 #e5e5e5 #e5e5e5 #e5e5e5;
+  border-radius: 8px;
+  box-sizing: border-box;
+  animation: btn-spin 0.6s linear;
+  animation-iteration-count: infinite;
+}
+.dj-btn--primary.dj-btn--loading::before,
+.dj-btn--warn.dj-btn--loading::before,
+.dj-btn--danger.dj-btn--loading::before {
+  border-color: #fff rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+}
+
+@keyframes btn-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* disabled */
+.dj-btn.dj-btn--disabled {
+  /* 防止样式被 button[disabled] 的规则覆盖，所以使用了important */
+  color: #999 ! important;
+  background: #f8f8f8 ! important;
+  border-color: #e5e5e5 ! important;
+  cursor: not-allowed ! important;
+  opacity: 1 ! important;
+}
+
+/* :last-child */
+.dj-btn--last-child,
+.dj-btn:last-child {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+</style>
+<template>
+    <button
+        class="{{type?('dj-btn--'+type):''}} {{size?('dj-btn--'+size):''}} {{disabled?('dj-btn--disabled'):''}} {{loading?('dj-btn--loading'):''}} dj-btn {{className}}"
+        @tap="handletap({{componentId}})"
+        disabled="{{disabled}}"
+        type="{{nativeType?nativeType:''}}">
+        <slot></slot>
+    </button>
+</template>
+<script>
+    import wepy from 'wepy';
+    export default class Btn extends wepy.component {
+      props={
+        componentId:{
+          default:''
+        },
+        className: {
+          type: String,
+          default: 'default'
+        },
+        type: {
+          type: String,
+          default: 'default'
+        },
+        size: String,
+        nativeType: {
+          type: String,
+          default: ''
+        },
+        loading:{
+          type:Boolean,
+          default:false
+        },
+        disabled:{
+          type:Boolean,
+          default:false
+        },
+        handleClick:{
+          type:Function,
+          default:function(v){return v}
+        }
+    }
+      events = {
+      }
+      methods = {
+        handletap(id){
+          if(this.handleClick){
+            this.handleClick(id);
+          }
+        }
+      }
+
+      onLoad() {
+      }
+  }
+</script>
